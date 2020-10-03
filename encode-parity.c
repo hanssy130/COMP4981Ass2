@@ -3,6 +3,7 @@
 #include <stdbool.h>
 #include <limits.h>
 #include <stdlib.h>
+#include <string.h>
 
 #define MASK_00000001 0x01
 #define MASK_00000010 0x02
@@ -15,13 +16,13 @@
 #define LINESIZE 1024
 
 
- void display(int8_t val, bool parity);
- void to_binary(int8_t val, bool value[8]);
- bool get_bit_value(int8_t val, uint8_t mask);
- void to_printable_binary(bool bits[8], char printable[9], bool parity);
+void display(int8_t val, bool parity);
+void to_binary(int8_t val, bool value[8]);
+bool get_bit_value(int8_t val, uint8_t mask);
+void to_printable_binary(bool bits[8], char printable[9], bool parity);
+char ** createArray(char *line, const char *sep);
 
 int main(int argc, const char* argv[]) {
-    int parity = 0;
     char *str;
     bool odd = false;
 
@@ -34,12 +35,18 @@ int main(int argc, const char* argv[]) {
     if (strcmp(argv[1], "--odd") != 0 && strcmp(argv[1], "--even") != 0)
         perror("please specify --parity");
 
-    if (argv[2] == 0) {
+    if (argv[2] == 0) { // read from stdin
         printf("Input: ");
+        str = malloc(LINESIZE *sizeof(char));
+        if (!str) { 
+            perror("Failed malloc");
+            exit(EXIT_FAILURE);
+        }  
         fgets(str, LINESIZE, stdin); 
-    } else {
+        str[strlen(str)-1]='\0';
+    } else { // read from command line
         str = malloc(sizeof(char) * (strlen(argv[2])+1) );
-        if (!str) {
+        if (!str) { 
             perror("Failed malloc");
             exit(EXIT_FAILURE);
         }   
@@ -48,9 +55,10 @@ int main(int argc, const char* argv[]) {
 
     //printf("%s", str);
 
-    for (int j = 0; j < strlen(str); j++) {
+    for (size_t j = 0; j < strlen(str); j++) {
         display(str[j], odd);
     }
+    free(str);
 }
 
 void to_binary(int8_t val, bool bits[8]) {
