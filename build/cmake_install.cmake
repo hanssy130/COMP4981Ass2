@@ -1,4 +1,4 @@
-# Install script for directory: /home/billy/Desktop/COMP4981/Assignment 2
+# Install script for directory: /home/billy/Desktop/COMP4981/COMP4981Ass2
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/billy/Desktop/COMP4981/Assignment 2/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/billy/Desktop/COMP4981/COMP4981Ass2/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

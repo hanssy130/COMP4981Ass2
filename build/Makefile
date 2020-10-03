@@ -67,10 +67,10 @@ RM = /snap/cmake/599/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/billy/Desktop/COMP4981/Assignment 2"
+CMAKE_SOURCE_DIR = /home/billy/Desktop/COMP4981/COMP4981Ass2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/billy/Desktop/COMP4981/Assignment 2/build"
+CMAKE_BINARY_DIR = /home/billy/Desktop/COMP4981/COMP4981Ass2/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,9 +99,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/billy/Desktop/COMP4981/Assignment 2/build/CMakeFiles" "/home/billy/Desktop/COMP4981/Assignment 2/build//CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/billy/Desktop/COMP4981/COMP4981Ass2/build/CMakeFiles /home/billy/Desktop/COMP4981/COMP4981Ass2/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/billy/Desktop/COMP4981/Assignment 2/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/billy/Desktop/COMP4981/COMP4981Ass2/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -129,6 +129,86 @@ depend:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+#=============================================================================
+# Target rules for targets named bit_masking
+
+# Build rule for target.
+bit_masking: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bit_masking
+.PHONY : bit_masking
+
+# fast build rule for target.
+bit_masking/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bit_masking.dir/build.make CMakeFiles/bit_masking.dir/build
+.PHONY : bit_masking/fast
+
+#=============================================================================
+# Target rules for targets named encode
+
+# Build rule for target.
+encode: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 encode
+.PHONY : encode
+
+# fast build rule for target.
+encode/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode.dir/build.make CMakeFiles/encode.dir/build
+.PHONY : encode/fast
+
+bit_masking.o: bit_masking.c.o
+
+.PHONY : bit_masking.o
+
+# target to build an object file
+bit_masking.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bit_masking.dir/build.make CMakeFiles/bit_masking.dir/bit_masking.c.o
+.PHONY : bit_masking.c.o
+
+bit_masking.i: bit_masking.c.i
+
+.PHONY : bit_masking.i
+
+# target to preprocess a source file
+bit_masking.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bit_masking.dir/build.make CMakeFiles/bit_masking.dir/bit_masking.c.i
+.PHONY : bit_masking.c.i
+
+bit_masking.s: bit_masking.c.s
+
+.PHONY : bit_masking.s
+
+# target to generate assembly for a file
+bit_masking.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bit_masking.dir/build.make CMakeFiles/bit_masking.dir/bit_masking.c.s
+.PHONY : bit_masking.c.s
+
+encode-parity.o: encode-parity.c.o
+
+.PHONY : encode-parity.o
+
+# target to build an object file
+encode-parity.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode.dir/build.make CMakeFiles/encode.dir/encode-parity.c.o
+.PHONY : encode-parity.c.o
+
+encode-parity.i: encode-parity.c.i
+
+.PHONY : encode-parity.i
+
+# target to preprocess a source file
+encode-parity.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode.dir/build.make CMakeFiles/encode.dir/encode-parity.c.i
+.PHONY : encode-parity.c.i
+
+encode-parity.s: encode-parity.c.s
+
+.PHONY : encode-parity.s
+
+# target to generate assembly for a file
+encode-parity.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode.dir/build.make CMakeFiles/encode.dir/encode-parity.c.s
+.PHONY : encode-parity.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -137,6 +217,14 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... bit_masking"
+	@echo "... encode"
+	@echo "... bit_masking.o"
+	@echo "... bit_masking.i"
+	@echo "... bit_masking.s"
+	@echo "... encode-parity.o"
+	@echo "... encode-parity.i"
+	@echo "... encode-parity.s"
 .PHONY : help
 
 

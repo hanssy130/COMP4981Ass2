@@ -1,0 +1,1 @@
+/usr/bin/cc  -Wall -Wextra -Wpedantic CMakeFiles/encode.dir/encode-parity.c.o -o encode  libbit_masking.a 
