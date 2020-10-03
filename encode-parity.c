@@ -2,6 +2,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <limits.h>
+#include <stdlib.h>
 
 #define MASK_00000001 0x01
 #define MASK_00000010 0x02
@@ -14,26 +15,42 @@
 #define LINESIZE 1024
 
 
- void display(int8_t val);
+ void display(int8_t val, bool parity);
  void to_binary(int8_t val, bool value[8]);
  bool get_bit_value(int8_t val, uint8_t mask);
- void to_printable_binary(bool bits[8], char printable[9]);
+ void to_printable_binary(bool bits[8], char printable[9], bool parity);
 
 int main(int argc, const char* argv[]) {
-    char str[LINESIZE];
     int parity = 0;
-    if (strcmp(argv[1], "--even") == 0) {
-        parity = 1;
+    char *str;
+    bool odd = false;
+
+    if (argc < 2)
+        perror("please specify --parity <input>");
+
+    if (strcmp(argv[1], "--odd") == 0){
+        odd = true;
     }
+    if (strcmp(argv[1], "--odd") != 0 && strcmp(argv[1], "--even") != 0)
+        perror("please specify --parity");
+
     if (argv[2] == 0) {
         printf("Input: ");
         fgets(str, LINESIZE, stdin); 
     } else {
-        strcpy(argv[2], str);
+        str = malloc(sizeof(char) * (strlen(argv[2])+1) );
+        if (!str) {
+            perror("Failed malloc");
+            exit(EXIT_FAILURE);
+        }   
+        strcpy(str, argv[2]);
     }
 
-    for (int i = 0; i !='\0'; i++)
-        display(str[1]);
+    //printf("%s", str);
+
+    for (int j = 0; j < strlen(str); j++) {
+        display(str[j], odd);
+    }
 }
 
 void to_binary(int8_t val, bool bits[8]) {
@@ -66,34 +83,50 @@ bool get_bit_value(int8_t val, uint8_t mask)
     return bit;
 }
 
-void to_printable_binary(bool bits[8], char printable[9])
+void to_printable_binary(bool bits[8], char printable[10], bool parity)
 {
+    int counter = 0;
     for(size_t i = 0; i < 8; i++)
     {
         if(bits[i])
         {
             printable[i] = '1';
+            counter++;
         }
         else
         {
             printable[i] = '0';
         }
     }
+     if (parity) { // odd parity
+         if (counter % 2 == 0) { // even
+             printable[8] = '1';
+         } else { // odd
+             printable[8] = '0';
+         }
+     } else { //even parity
+         if (counter % 2 == 0) { // even
+             printable[8] = '0';   
+         } else { // odd
+             printable[8] = '1';
+         }
+     }
     
-    printable[8] = '\0';
+    printable[9] = '\0';
 }
 
-void display(int8_t val)
+void display(int8_t val, bool parity)
 {
     bool bits[8];
-    char printable_bits[9];
+    char printable_bits[10];
     
     to_binary(val, bits);
-    to_printable_binary(bits, printable_bits);
-    printf("char: %c\n", val);
+    to_printable_binary(bits, printable_bits, parity);
+    //printf("char: %c\n", val);
     // printf("hex: %x\n", val);
     // printf("HEX: %X\n", val);
     // printf("decimal: %d\n", val);
     // printf("octal: %o\n", val);
-    printf("%s ", printable_bits);
+    printf("%s", printable_bits);
+    printf("\n");
 }
