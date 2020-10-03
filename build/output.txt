@@ -1,5 +1,18 @@
-Input: 011010001
-011001010
-011011000
-011011000
-011011110
+char: i
+binary with parity: 011010010
+char: n
+binary with parity: 011011101
+char: p
+binary with parity: 011100001
+char: u
+binary with parity: 011101011
+char: t
+binary with parity: 011101000
+char: .
+binary with parity: 001011100
+char: t
+binary with parity: 011101000
+char: x
+binary with parity: 011110000
+char: t
+binary with parity: 011101000

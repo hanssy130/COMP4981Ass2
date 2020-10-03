@@ -21,6 +21,7 @@ void to_binary(int8_t val, bool value[8]);
 bool get_bit_value(int8_t val, uint8_t mask);
 void to_printable_binary(bool bits[8], char printable[9], bool parity);
 char ** createArray(char *line, const char *sep);
+char * read_from_stdin();
 
 int main(int argc, const char* argv[]) {
     char *str;
@@ -36,14 +37,7 @@ int main(int argc, const char* argv[]) {
         perror("please specify --parity");
 
     if (argv[2] == 0) { // read from stdin
-        printf("Input: ");
-        str = malloc(LINESIZE *sizeof(char));
-        if (!str) { 
-            perror("Failed malloc");
-            exit(EXIT_FAILURE);
-        }  
-        fgets(str, LINESIZE, stdin); 
-        str[strlen(str)-1]='\0';
+        str = read_from_stdin();
     } else { // read from command line
         str = malloc(sizeof(char) * (strlen(argv[2])+1) );
         if (!str) { 
@@ -53,12 +47,22 @@ int main(int argc, const char* argv[]) {
         strcpy(str, argv[2]);
     }
 
-    //printf("%s", str);
-
     for (size_t j = 0; j < strlen(str); j++) {
         display(str[j], odd);
     }
     free(str);
+}
+
+char * read_from_stdin() {
+    char *str = malloc(LINESIZE *sizeof(char));
+    if (!str) { 
+        perror("Failed malloc");
+        exit(EXIT_FAILURE);
+    }  
+    fgets(str, LINESIZE, stdin); 
+    if (str[strlen(str)-1] == '\n') // case where input file does not have \n character
+        str[strlen(str)-1]='\0';
+    return str;
 }
 
 void to_binary(int8_t val, bool bits[8]) {
@@ -130,11 +134,11 @@ void display(int8_t val, bool parity)
     
     to_binary(val, bits);
     to_printable_binary(bits, printable_bits, parity);
-    //printf("char: %c\n", val);
+    printf("char: %c\n", val);
     // printf("hex: %x\n", val);
     // printf("HEX: %X\n", val);
     // printf("decimal: %d\n", val);
     // printf("octal: %o\n", val);
-    printf("%s", printable_bits);
+    printf("binary with parity: %s", printable_bits);
     printf("\n");
 }
