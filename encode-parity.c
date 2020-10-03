@@ -13,24 +13,30 @@
 #define MASK_10000000 0x80
 #define LINESIZE 1024
 
+
+ void display(int8_t val);
+ void to_binary(int8_t val, bool value[8]);
+ bool get_bit_value(int8_t val, uint8_t mask);
+ void to_printable_binary(bool bits[8], char printable[9]);
+
 int main(int argc, const char* argv[]) {
-    char* str[LINESIZE];
+    char str[LINESIZE];
     int parity = 0;
     if (strcmp(argv[1], "--even") == 0) {
-
+        parity = 1;
     }
     if (argv[2] == 0) {
         printf("Input: ");
         fgets(str, LINESIZE, stdin); 
+    } else {
+        strcpy(argv[2], str);
     }
 
-    strcpy(argv[2], str);
-
-    for (int i = 0; i != EOF; i++)
-
+    for (int i = 0; i !='\0'; i++)
+        display(str[1]);
 }
 
-void encode_even(int8_t val, bool bits[8]) {
+void to_binary(int8_t val, bool bits[8]) {
     bits[0] = get_bit_value(val, MASK_10000000);
     bits[1] = get_bit_value(val, MASK_01000000);
     bits[2] = get_bit_value(val, MASK_00100000);
@@ -89,5 +95,5 @@ void display(int8_t val)
     // printf("HEX: %X\n", val);
     // printf("decimal: %d\n", val);
     // printf("octal: %o\n", val);
-    printf("%s", printable_bits);
+    printf("%s ", printable_bits);
 }

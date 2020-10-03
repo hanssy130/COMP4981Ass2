@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/billy/Desktop/COMP4981/COMP4981Ass2/encode-parity.c
+stdio.h
+-
+stdint.h
+-
+stdbool.h
+-
+limits.h
+-
+

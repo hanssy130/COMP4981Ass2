@@ -75,17 +75,6 @@ CMAKE_BINARY_DIR = /home/billy/Desktop/COMP4981/COMP4981Ass2/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/snap/cmake/599/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
@@ -96,6 +85,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/snap/cmake/599/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -143,17 +143,17 @@ bit_masking/fast:
 .PHONY : bit_masking/fast
 
 #=============================================================================
-# Target rules for targets named encode
+# Target rules for targets named encode-parity
 
 # Build rule for target.
-encode: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 encode
-.PHONY : encode
+encode-parity: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 encode-parity
+.PHONY : encode-parity
 
 # fast build rule for target.
-encode/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode.dir/build.make CMakeFiles/encode.dir/build
-.PHONY : encode/fast
+encode-parity/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode-parity.dir/build.make CMakeFiles/encode-parity.dir/build
+.PHONY : encode-parity/fast
 
 bit_masking.o: bit_masking.c.o
 
@@ -188,7 +188,7 @@ encode-parity.o: encode-parity.c.o
 
 # target to build an object file
 encode-parity.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode.dir/build.make CMakeFiles/encode.dir/encode-parity.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode-parity.dir/build.make CMakeFiles/encode-parity.dir/encode-parity.c.o
 .PHONY : encode-parity.c.o
 
 encode-parity.i: encode-parity.c.i
@@ -197,7 +197,7 @@ encode-parity.i: encode-parity.c.i
 
 # target to preprocess a source file
 encode-parity.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode.dir/build.make CMakeFiles/encode.dir/encode-parity.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode-parity.dir/build.make CMakeFiles/encode-parity.dir/encode-parity.c.i
 .PHONY : encode-parity.c.i
 
 encode-parity.s: encode-parity.c.s
@@ -206,7 +206,7 @@ encode-parity.s: encode-parity.c.s
 
 # target to generate assembly for a file
 encode-parity.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode.dir/build.make CMakeFiles/encode.dir/encode-parity.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode-parity.dir/build.make CMakeFiles/encode-parity.dir/encode-parity.c.s
 .PHONY : encode-parity.c.s
 
 # Help Target
@@ -218,7 +218,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... bit_masking"
-	@echo "... encode"
+	@echo "... encode-parity"
 	@echo "... bit_masking.o"
 	@echo "... bit_masking.i"
 	@echo "... bit_masking.s"

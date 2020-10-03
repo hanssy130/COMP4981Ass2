@@ -73,7 +73,7 @@ CMAKE_BINARY_DIR = /home/billy/Desktop/COMP4981/COMP4981Ass2/build
 
 # The main recursive "all" target.
 all: CMakeFiles/bit_masking.dir/all
-all: CMakeFiles/encode.dir/all
+all: CMakeFiles/encode-parity.dir/all
 
 .PHONY : all
 
@@ -84,7 +84,7 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/bit_masking.dir/clean
-clean: CMakeFiles/encode.dir/clean
+clean: CMakeFiles/encode-parity.dir/clean
 
 .PHONY : clean
 
@@ -116,31 +116,31 @@ CMakeFiles/bit_masking.dir/clean:
 .PHONY : CMakeFiles/bit_masking.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/encode.dir
+# Target rules for target CMakeFiles/encode-parity.dir
 
 # All Build rule for target.
-CMakeFiles/encode.dir/all: CMakeFiles/bit_masking.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode.dir/build.make CMakeFiles/encode.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode.dir/build.make CMakeFiles/encode.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/billy/Desktop/COMP4981/COMP4981Ass2/build/CMakeFiles --progress-num=3,4 "Built target encode"
-.PHONY : CMakeFiles/encode.dir/all
+CMakeFiles/encode-parity.dir/all: CMakeFiles/bit_masking.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode-parity.dir/build.make CMakeFiles/encode-parity.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode-parity.dir/build.make CMakeFiles/encode-parity.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/billy/Desktop/COMP4981/COMP4981Ass2/build/CMakeFiles --progress-num=3,4 "Built target encode-parity"
+.PHONY : CMakeFiles/encode-parity.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/encode.dir/rule: cmake_check_build_system
+CMakeFiles/encode-parity.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/billy/Desktop/COMP4981/COMP4981Ass2/build/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/encode.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/encode-parity.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/billy/Desktop/COMP4981/COMP4981Ass2/build/CMakeFiles 0
-.PHONY : CMakeFiles/encode.dir/rule
+.PHONY : CMakeFiles/encode-parity.dir/rule
 
 # Convenience name for target.
-encode: CMakeFiles/encode.dir/rule
+encode-parity: CMakeFiles/encode-parity.dir/rule
 
-.PHONY : encode
+.PHONY : encode-parity
 
 # clean rule for target.
-CMakeFiles/encode.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode.dir/build.make CMakeFiles/encode.dir/clean
-.PHONY : CMakeFiles/encode.dir/clean
+CMakeFiles/encode-parity.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode-parity.dir/build.make CMakeFiles/encode-parity.dir/clean
+.PHONY : CMakeFiles/encode-parity.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

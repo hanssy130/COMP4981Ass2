@@ -1,4 +1,4 @@
-/home/billy/Desktop/COMP4981/COMP4981Ass2/build/CMakeFiles/rebuild_cache.dir
 /home/billy/Desktop/COMP4981/COMP4981Ass2/build/CMakeFiles/edit_cache.dir
 /home/billy/Desktop/COMP4981/COMP4981Ass2/build/CMakeFiles/bit_masking.dir
-/home/billy/Desktop/COMP4981/COMP4981Ass2/build/CMakeFiles/encode.dir
+/home/billy/Desktop/COMP4981/COMP4981Ass2/build/CMakeFiles/rebuild_cache.dir
+/home/billy/Desktop/COMP4981/COMP4981Ass2/build/CMakeFiles/encode-parity.dir
