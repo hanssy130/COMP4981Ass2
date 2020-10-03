@@ -12,19 +12,32 @@ You are to create 6 programs to encode and decode parity, checksum, crc32. The p
 - decode-crc32
 
 Each program will **read from a file**, if provided, otherwise they will read from stdin.
+
 Each program will **write the output to stdout**.
+
 For Parity and checksum you need to add a **"--even" or "--odd" flag**. The getopt() function is useful to look at.
+
 Parity and checksum work on **8-bit** values. This table will help to get you started: http://sticksandstones.kstrom.com/appen.html
+
 Given an input of "Hi" that is 01001000 and 01101001 (see the table link above).
+
 If we are using even parity the number of 1 bits must be even: 01001000 needs zero 1 bits to have an even number of 1 bits so it becomes 010010000 and 01101001 also needs zero 1 bits so it becomes 011010010.
+
 The output of the program is then 010010000011010010
+
 To decode the first 9 bits are read: 01001000 and it is verified that there is an even number of 1 bits. Then the next 9 bits are read 011010010 and, again, verified that there are an even number of 1 bits. The output is then Hi.
+
+
 If the parity is incorrect then you must write a message to stdout informing the user where the error is (eg. what block of 9 bytes is wrong, where in the file).
+
 For checksum the idea is the same except that all the vertical bits are checked too (example is even parity again):
 
 01001000 -> 010010000
+
 01101001 -> 011010010
+
 -----------      -------------
+
 00100001 -> 001000010
 
 For CRC32 there are many resources on the internet. As well as Chi En, who will cover CRC32 later in the Datacomm course, is available to help probably, if you ask nicely.
@@ -45,12 +58,18 @@ You MAY NOT share code between teams. The only discussion that should happen is 
 ## Specification Addition
 
 You MUST submit a **CMakeLists.txt** that works on at least 3.18.2 that will create the 6 binaries.
+
 The binaries MUST **be named** as outlined in the assignment specification.
+
 You MUST hand in your **design documentation** (modules, functions, pseudocode/flowchart/whatever) by 9:30 Tuesday morning.
+
 You MUST use Doxygen or some other "standard" **comment style** to document all of your functions.
+
 You are not required to make any libraries, but I would encourage it.
+
 You are not required to do any unit testing, but I would encourage it.
-The programs will be run basically like:
+
+######The programs will be run basically like:
 
 Encoders:
 ```
