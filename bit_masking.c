@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stdbool.h>
-#include "bit-masking.h"
+#include "bit_masking.h"
 
 // https://www.rapidtables.com/convert/number/binary-to-hex.html
 // https://www.rapidtables.com/code/text/ascii-table.html
