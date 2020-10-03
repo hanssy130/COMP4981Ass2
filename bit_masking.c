@@ -15,6 +15,11 @@
 #define MASK_01000000 0x40
 #define MASK_10000000 0x80
 
+static void display(int8_t val);
+static void to_binary(int8_t val, bool value[8]);
+static bool get_bit_value(int8_t val, uint8_t mask);
+static void to_printable_binary(bool bits[8], char printable[9]);
+
 int main(int argc, const char * argv[])
 {
     display(argv[1][0]);
@@ -30,10 +35,10 @@ static void display(int8_t val)
     to_binary(val, bits);
     to_printable_binary(bits, printable_bits);
     printf("char: %c\n", val);
-    printf("hex: %x\n", val);
-    printf("HEX: %X\n", val);
-    printf("decimal: %d\n", val);
-    printf("octal: %o\n", val);
+    // printf("hex: %x\n", val);
+    // printf("HEX: %X\n", val);
+    // printf("decimal: %d\n", val);
+    // printf("octal: %o\n", val);
     printf("binary: %s\n", printable_bits);
 }
 
