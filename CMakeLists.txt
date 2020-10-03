@@ -10,12 +10,12 @@ add_library(bit_masking bit_masking.c )
 target_compile_options(bit_masking PRIVATE -Wpedantic -Wall -Wextra)
 
 # encode-parity decode-parity
-add_executable(encode encode-parity.c)
-target_link_libraries(encode bit_masking)
-target_compile_options(encode PRIVATE -Wpedantic -Wall -Wextra)
+add_executable(encode-parity encode-parity.c)
+target_link_libraries(encode-parity bit_masking)
+target_compile_options(encode-parity PRIVATE -Wpedantic -Wall -Wextra)
 
-#add_executable(decode decode-parity.c)
-#target_compile_options(decode PRIVATE -Wpedantic -Wall -Wextra)
+#add_executable(decode-parity decode-parity.c)
+#target_compile_options(decode-parity PRIVATE -Wpedantic -Wall -Wextra)
 
 # encode-checksum decode-checksum
 #add_executable(encode-checksum encode-checksum.c)
