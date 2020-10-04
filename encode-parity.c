@@ -30,9 +30,9 @@ int main(int argc, const char* argv[]) {
     if (strcmp(argv[1], "--odd") == 0){
         odd = true;
     }
-    if (strcmp(argv[1], "--odd") != 0 && strcmp(argv[1], "--even") != 0)
+    if (strcmp(argv[1], "--odd") != 0 && strcmp(argv[1], "--even") != 0) {
         perror("please specify --parity");
-
+    }
     if (argv[2] == 0) { // read from stdin
         str = read_from_stdin();
     } else { // read from command line
