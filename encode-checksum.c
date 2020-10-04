@@ -13,15 +13,16 @@
 #define MASK_01000000 0x40
 #define MASK_10000000 0x80
 #define LINESIZE 1024
+#define NUM_BITS 10
 
 char* display(int8_t val, bool parity);
 void to_binary(int8_t val, bool value[8]);
 bool get_bit_value(int8_t val, uint8_t mask);
-void to_printable_binary(bool bits[8], char printable[9], bool parity);
+void to_printable_binary(bool bits[8], char printable[NUM_BITS], bool parity);
 char * read_from_stdin();
-char** getlist(char printable[10], size_t len);
-void checksum(char** list, char result[10], size_t len, bool odd);
-bool test_case(char* result, char* answer);
+char** getlist(char printable[NUM_BITS], size_t len);
+void checksum(char list[][NUM_BITS], char result[NUM_BITS], size_t len, bool odd);
+int test_case(char* result, char* answer);
 
 int main(int argc, const char* argv[]) {
     char *str;
@@ -47,14 +48,15 @@ int main(int argc, const char* argv[]) {
         }   
         strcpy(str, argv[2]);
     }
-    char** list = malloc(strlen(str) * sizeof(char));
+    char list[strlen(str)][NUM_BITS];
     for (size_t i = 0; i < strlen(str); i++) {
-        list[i] = malloc((LINESIZE+1)*sizeof(char));
         strcpy(list[i], display(str[i], odd));
     }
     checksum(list, result, strlen(str), odd);
+    printf("%d\n", test_case("011100001011101011010010101001101111010100011011100111010000111011100100010110100011001100010001110010011111001101100010100110011010010001101001010011010011010111010110001010100110010010101", 
+    "011100001011101011010010101001101111010100011011100111010000111011100100010110100011001100010001110010011111001101100010100110011010010001101001010011010011010111010110001010100110"));
+    printf("result:\011100001011101011010010101001101111010100011011100111010000111011100100010110100011001100010001110010011111001101100010100110011010010001101001010011010011010111010110001010100110011010111\n");
     free(str);
-    free(list);
 }
 
 char * read_from_stdin() {
@@ -131,50 +133,31 @@ void to_printable_binary(bool bits[8], char printable[10], bool parity)
     printable[9] = '\0';
 }
 
-void checksum(char**list, char result[10], size_t len, bool odd) {
-    for (size_t j = 0; j < len; j++) {
-        int counter = 0;
-        for (size_t z = 0; z < strlen(list[j]); z++) {
+void checksum(char list[][NUM_BITS], char result[NUM_BITS], size_t len, bool odd) {
+    strcpy(result, list[0]);
+    for (size_t j = 1; j < len; j++) {
+        for (size_t z = 0; z < NUM_BITS - 1; z++) {
             if (odd) {
-                if (list[j][z] == '1'){
-                    counter++;
-                }
-                if (list[j+1][z] == '1'){
-                    counter++;
-                }
-                if (counter % 2 == 0){
+                if (result[z] == list[j][z]){
                     result[z] = '1';
-                }
-                else
+                } else
                 {
                     result[z] = '0';
                 }
-                counter = 0;
             } else {
-                if (list[j][z] == '1'){
-                    counter++;
-                }if (list[j+1][z] == '1'){
-                    counter++;
-                }
-                if (counter % 2 == 0){
+                if (result[z] == list[j][z]){
                     result[z] = '0';
-                }else
+                } else
                 {
                     result[z] = '1';
                 }
-                counter = 0;
             }
         }
-
-        for (size_t x = 0; x < 10; x++) {
-                list[j+1][x] = result[x];
-        }
-
-        if (j == (len-2)) // at last string
-            break;
-
+        result[9]='\0';
     }
-
+    //printf("%c\n", list[0][0]);
+    for (size_t y = 0; y < len; y++)
+            printf("%s", list[y]);
     printf("%s\n", result);
 }
 
@@ -185,18 +168,11 @@ char* display(int8_t val, bool parity)
     
     to_binary(val, bits);
     to_printable_binary(bits, printable_bits, parity);
-    //printf("char: %c\n", val);
-    // printf("hex: %x\n", val);
-    // printf("HEX: %X\n", val);
-    // printf("decimal: %d\n", val);
-    // printf("octal: %o\n", val);
-    //printf("%s", printable_bits);
-    //strcpy(list[count], printable_bits);
     return printable_bits;
 }
 
-bool test_case(char* result, char* answer) {
+int test_case(char* result, char* answer) {
     if (strcmp(result, answer) == 0)
-        return true;
-    return false;
+        return 1;
+    return 0;
 }

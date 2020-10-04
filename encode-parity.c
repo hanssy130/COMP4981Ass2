@@ -17,8 +17,9 @@
 void display(int8_t val, bool parity);
 void to_binary(int8_t val, bool value[8]);
 bool get_bit_value(int8_t val, uint8_t mask);
-void to_printable_binary(bool bits[8], char printable[9], bool parity);
+void to_printable_binary(bool bits[8], char printable[10], bool parity);
 char * read_from_stdin();
+int test_case(char* result, char* answer);
 
 int main(int argc, const char* argv[]) {
     char *str;
@@ -47,6 +48,7 @@ int main(int argc, const char* argv[]) {
         display(str[j], odd);
     }
     printf("\n");
+    //printf("%d", test_case("011100001011101011010010101001101111010100011011100111010000111011100100010110100011001100010001110010011111001101100010100110011010010001101001010011010011010111010110001010100110", "011100001011101011010010101001101111010100011011100111010000111011100100010110100011001100010001110010011111001101100010100110011010010001101001010011010011010111010110001010100110"));
     free(str);
 }
 
@@ -131,10 +133,11 @@ void display(int8_t val, bool parity)
     
     to_binary(val, bits);
     to_printable_binary(bits, printable_bits, parity);
-    //printf("char: %c\n", val);
-    // printf("hex: %x\n", val);
-    // printf("HEX: %X\n", val);
-    // printf("decimal: %d\n", val);
-    // printf("octal: %o\n", val);
     printf("%s", printable_bits);
+}
+
+int test_case(char* result, char* answer) {
+    if (strcmp(result, answer) == 0)
+        return 1;
+    return 0;
 }
