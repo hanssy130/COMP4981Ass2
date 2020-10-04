@@ -130,6 +130,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named encode-checksum
+
+# Build rule for target.
+encode-checksum: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 encode-checksum
+.PHONY : encode-checksum
+
+# fast build rule for target.
+encode-checksum/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode-checksum.dir/build.make CMakeFiles/encode-checksum.dir/build
+.PHONY : encode-checksum/fast
+
+#=============================================================================
+# Target rules for targets named decode-parity
+
+# Build rule for target.
+decode-parity: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 decode-parity
+.PHONY : decode-parity
+
+# fast build rule for target.
+decode-parity/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/decode-parity.dir/build.make CMakeFiles/decode-parity.dir/build
+.PHONY : decode-parity/fast
+
+#=============================================================================
 # Target rules for targets named bit_masking
 
 # Build rule for target.
@@ -182,6 +208,60 @@ bit_masking.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bit_masking.dir/build.make CMakeFiles/bit_masking.dir/bit_masking.c.s
 .PHONY : bit_masking.c.s
 
+decode-parity.o: decode-parity.c.o
+
+.PHONY : decode-parity.o
+
+# target to build an object file
+decode-parity.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/decode-parity.dir/build.make CMakeFiles/decode-parity.dir/decode-parity.c.o
+.PHONY : decode-parity.c.o
+
+decode-parity.i: decode-parity.c.i
+
+.PHONY : decode-parity.i
+
+# target to preprocess a source file
+decode-parity.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/decode-parity.dir/build.make CMakeFiles/decode-parity.dir/decode-parity.c.i
+.PHONY : decode-parity.c.i
+
+decode-parity.s: decode-parity.c.s
+
+.PHONY : decode-parity.s
+
+# target to generate assembly for a file
+decode-parity.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/decode-parity.dir/build.make CMakeFiles/decode-parity.dir/decode-parity.c.s
+.PHONY : decode-parity.c.s
+
+encode-checksum.o: encode-checksum.c.o
+
+.PHONY : encode-checksum.o
+
+# target to build an object file
+encode-checksum.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode-checksum.dir/build.make CMakeFiles/encode-checksum.dir/encode-checksum.c.o
+.PHONY : encode-checksum.c.o
+
+encode-checksum.i: encode-checksum.c.i
+
+.PHONY : encode-checksum.i
+
+# target to preprocess a source file
+encode-checksum.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode-checksum.dir/build.make CMakeFiles/encode-checksum.dir/encode-checksum.c.i
+.PHONY : encode-checksum.c.i
+
+encode-checksum.s: encode-checksum.c.s
+
+.PHONY : encode-checksum.s
+
+# target to generate assembly for a file
+encode-checksum.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode-checksum.dir/build.make CMakeFiles/encode-checksum.dir/encode-checksum.c.s
+.PHONY : encode-checksum.c.s
+
 encode-parity.o: encode-parity.c.o
 
 .PHONY : encode-parity.o
@@ -218,10 +298,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... bit_masking"
+	@echo "... decode-parity"
+	@echo "... encode-checksum"
 	@echo "... encode-parity"
 	@echo "... bit_masking.o"
 	@echo "... bit_masking.i"
 	@echo "... bit_masking.s"
+	@echo "... decode-parity.o"
+	@echo "... decode-parity.i"
+	@echo "... decode-parity.s"
+	@echo "... encode-checksum.o"
+	@echo "... encode-checksum.i"
+	@echo "... encode-checksum.s"
 	@echo "... encode-parity.o"
 	@echo "... encode-parity.i"
 	@echo "... encode-parity.s"

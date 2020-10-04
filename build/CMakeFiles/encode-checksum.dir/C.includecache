@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/billy/Desktop/COMP4981/COMP4981Ass2/encode-parity.c
+/home/billy/Desktop/COMP4981/COMP4981Ass2/encode-checksum.c
 stdio.h
 -
 stdint.h

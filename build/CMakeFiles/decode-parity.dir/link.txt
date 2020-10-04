@@ -1,0 +1,1 @@
+/usr/bin/cc  -Wall -Wextra -Wpedantic CMakeFiles/decode-parity.dir/decode-parity.c.o -o decode-parity 

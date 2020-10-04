@@ -1,1 +1,1 @@
-/usr/bin/cc CMakeFiles/encode-checksum.dir/encode-checksum.c.o -o encode-checksum 
+/usr/bin/cc  -Wall -Wextra -Wpedantic CMakeFiles/encode-checksum.dir/encode-checksum.c.o -o encode-checksum 

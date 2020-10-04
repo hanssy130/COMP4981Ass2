@@ -14,12 +14,12 @@ add_executable(encode-parity encode-parity.c)
 target_link_libraries(encode-parity bit_masking)
 target_compile_options(encode-parity PRIVATE -Wpedantic -Wall -Wextra)
 
-#add_executable(decode-parity decode-parity.c)
-#target_compile_options(decode-parity PRIVATE -Wpedantic -Wall -Wextra)
+add_executable(decode-parity decode-parity.c)
+target_compile_options(decode-parity PRIVATE -Wpedantic -Wall -Wextra)
 
 # encode-checksum decode-checksum
-#add_executable(encode-checksum encode-checksum.c)
-#target_compile_options(encode-checksum PRIVATE -Wpedantic -Wall -Wextra)
+add_executable(encode-checksum encode-checksum.c)
+target_compile_options(encode-checksum PRIVATE -Wpedantic -Wall -Wextra)
 
 #add_executable(decode-checksum decode-checksum.c)
 #target_compile_options(decode-checksum PRIVATE -Wpedantic -Wall -Wextra)

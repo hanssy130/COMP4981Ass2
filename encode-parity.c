@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stdbool.h>
-#include <limits.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -15,12 +14,10 @@
 #define MASK_10000000 0x80
 #define LINESIZE 1024
 
-
 void display(int8_t val, bool parity);
 void to_binary(int8_t val, bool value[8]);
 bool get_bit_value(int8_t val, uint8_t mask);
 void to_printable_binary(bool bits[8], char printable[9], bool parity);
-char ** createArray(char *line, const char *sep);
 char * read_from_stdin();
 
 int main(int argc, const char* argv[]) {
