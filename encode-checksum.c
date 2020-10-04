@@ -133,12 +133,37 @@ void to_printable_binary(bool bits[8], char printable[10], bool parity)
 
 void checksum(char**list, char result[10], size_t len, bool odd) {
     for (size_t j = 0; j < len; j++) {
+        int counter = 0;
         for (size_t z = 0; z < strlen(list[j]); z++) {
-            if (list[j][z] == list[j+1][z]) {
-                result[z] = '0';
+            if (odd) {
+                if (list[j][z] == '1'){
+                    counter++;
+                }
+                if (list[j+1][z] == '1'){
+                    counter++;
+                }
+                if (counter % 2 == 0){
+                    result[z] = '1';
+                }
+                else
+                {
+                    result[z] = '0';
+                }
+                counter = 0;
             } else {
-                result[z] = '1';
-            } 
+                if (list[j][z] == '1'){
+                    counter++;
+                }if (list[j+1][z] == '1'){
+                    counter++;
+                }
+                if (counter % 2 == 0){
+                    result[z] = '0';
+                }else
+                {
+                    result[z] = '1';
+                }
+                counter = 0;
+            }
         }
 
         for (size_t x = 0; x < 10; x++) {
@@ -165,7 +190,7 @@ char* display(int8_t val, bool parity)
     // printf("HEX: %X\n", val);
     // printf("decimal: %d\n", val);
     // printf("octal: %o\n", val);
-    printf("%s", printable_bits);
+    //printf("%s", printable_bits);
     //strcpy(list[count], printable_bits);
     return printable_bits;
 }

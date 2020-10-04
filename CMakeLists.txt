@@ -6,7 +6,6 @@ set(CMAKE_C_FLAGS  "${CMAKE_C_FLAGS} -Wall -Wextra -Wpedantic")
 
 include_directories(.)
 
-
 # encode-parity decode-parity
 add_executable(encode-parity encode-parity.c)
 target_compile_options(encode-parity PRIVATE -Wpedantic -Wall -Wextra)
