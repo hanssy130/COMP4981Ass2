@@ -43,10 +43,10 @@ int main(int argc, const char* argv[]) {
         }   
         strcpy(str, argv[2]);
     }
-
     for (size_t j = 0; j < strlen(str); j++) {
         display(str[j], odd);
     }
+    printf("\n");
     free(str);
 }
 
@@ -131,11 +131,10 @@ void display(int8_t val, bool parity)
     
     to_binary(val, bits);
     to_printable_binary(bits, printable_bits, parity);
-    printf("char: %c\n", val);
+    //printf("char: %c\n", val);
     // printf("hex: %x\n", val);
     // printf("HEX: %X\n", val);
     // printf("decimal: %d\n", val);
     // printf("octal: %o\n", val);
-    printf("binary with parity: %s", printable_bits);
-    printf("\n");
+    printf("%s", printable_bits);
 }

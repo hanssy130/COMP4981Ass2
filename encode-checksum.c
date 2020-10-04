@@ -20,7 +20,8 @@ bool get_bit_value(int8_t val, uint8_t mask);
 void to_printable_binary(bool bits[8], char printable[9], bool parity);
 char * read_from_stdin();
 char** getlist(char printable[10], size_t len);
-void checksum(char** list, char result[10], size_t len);
+void checksum(char** list, char result[10], size_t len, bool odd);
+bool test_case(char* result, char* answer);
 
 int main(int argc, const char* argv[]) {
     char *str;
@@ -51,7 +52,7 @@ int main(int argc, const char* argv[]) {
         list[i] = malloc((LINESIZE+1)*sizeof(char));
         strcpy(list[i], display(str[i], odd));
     }
-    checksum(list, result, strlen(str));
+    checksum(list, result, strlen(str), odd);
     free(str);
     free(list);
 }
@@ -130,7 +131,7 @@ void to_printable_binary(bool bits[8], char printable[10], bool parity)
     printable[9] = '\0';
 }
 
-void checksum(char**list, char result[10], size_t len) {
+void checksum(char**list, char result[10], size_t len, bool odd) {
     for (size_t j = 0; j < len; j++) {
         for (size_t z = 0; z < strlen(list[j]); z++) {
             if (list[j][z] == list[j+1][z]) {
@@ -148,7 +149,8 @@ void checksum(char**list, char result[10], size_t len) {
             break;
 
     }
-    printf("checksum: %s\n", result);
+
+    printf("%s\n", result);
 }
 
 char* display(int8_t val, bool parity)
@@ -158,12 +160,18 @@ char* display(int8_t val, bool parity)
     
     to_binary(val, bits);
     to_printable_binary(bits, printable_bits, parity);
-    printf("char: %c\n", val);
+    //printf("char: %c\n", val);
     // printf("hex: %x\n", val);
     // printf("HEX: %X\n", val);
     // printf("decimal: %d\n", val);
     // printf("octal: %o\n", val);
-    printf("binary with parity: %s\n", printable_bits);
+    printf("%s", printable_bits);
     //strcpy(list[count], printable_bits);
     return printable_bits;
+}
+
+bool test_case(char* result, char* answer) {
+    if (strcmp(result, answer) == 0)
+        return true;
+    return false;
 }
