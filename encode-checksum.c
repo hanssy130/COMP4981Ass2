@@ -14,7 +14,7 @@
 #define MASK_10000000 0x80
 #define LINESIZE 1024
 
-char* display(int8_t val, bool parity, size_t len);
+char* display(int8_t val, bool parity);
 void to_binary(int8_t val, bool value[8]);
 bool get_bit_value(int8_t val, uint8_t mask);
 void to_printable_binary(bool bits[8], char printable[9], bool parity);
@@ -49,7 +49,7 @@ int main(int argc, const char* argv[]) {
     char** list = malloc(strlen(str) * sizeof(char));
     for (size_t i = 0; i < strlen(str); i++) {
         list[i] = malloc((LINESIZE+1)*sizeof(char));
-        strcpy(list[i], display(str[i], odd, strlen(str)));
+        strcpy(list[i], display(str[i], odd));
     }
     checksum(list, result, strlen(str));
     free(str);
@@ -151,7 +151,7 @@ void checksum(char**list, char result[10], size_t len) {
     printf("checksum: %s\n", result);
 }
 
-char* display(int8_t val, bool parity, size_t len)
+char* display(int8_t val, bool parity)
 {
     bool bits[8];
     char* printable_bits = malloc(10*sizeof(char));

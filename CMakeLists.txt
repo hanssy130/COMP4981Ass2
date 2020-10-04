@@ -6,12 +6,9 @@ set(CMAKE_C_FLAGS  "${CMAKE_C_FLAGS} -Wall -Wextra -Wpedantic")
 
 include_directories(.)
 
-add_library(bit_masking bit_masking.c)
-target_compile_options(bit_masking PRIVATE -Wpedantic -Wall -Wextra)
 
 # encode-parity decode-parity
 add_executable(encode-parity encode-parity.c)
-target_link_libraries(encode-parity bit_masking)
 target_compile_options(encode-parity PRIVATE -Wpedantic -Wall -Wextra)
 
 add_executable(decode-parity decode-parity.c)

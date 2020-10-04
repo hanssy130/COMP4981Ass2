@@ -15,7 +15,6 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/billy/Desktop/COMP4981/COMP4981Ass2/build/CMakeFiles/bit_masking.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.
