@@ -131,6 +131,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named decode-checksum
+
+# Build rule for target.
+decode-checksum: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 decode-checksum
+.PHONY : decode-checksum
+
+# fast build rule for target.
+decode-checksum/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/decode-checksum.dir/build.make CMakeFiles/decode-checksum.dir/build
+.PHONY : decode-checksum/fast
+
+#=============================================================================
 # Target rules for targets named encode-checksum
 
 # Build rule for target.
@@ -208,6 +221,33 @@ bit_masking.s: bit_masking.c.s
 bit_masking.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bit.dir/build.make CMakeFiles/bit.dir/bit_masking.c.s
 .PHONY : bit_masking.c.s
+
+decode-checksum.o: decode-checksum.c.o
+
+.PHONY : decode-checksum.o
+
+# target to build an object file
+decode-checksum.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/decode-checksum.dir/build.make CMakeFiles/decode-checksum.dir/decode-checksum.c.o
+.PHONY : decode-checksum.c.o
+
+decode-checksum.i: decode-checksum.c.i
+
+.PHONY : decode-checksum.i
+
+# target to preprocess a source file
+decode-checksum.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/decode-checksum.dir/build.make CMakeFiles/decode-checksum.dir/decode-checksum.c.i
+.PHONY : decode-checksum.c.i
+
+decode-checksum.s: decode-checksum.c.s
+
+.PHONY : decode-checksum.s
+
+# target to generate assembly for a file
+decode-checksum.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/decode-checksum.dir/build.make CMakeFiles/decode-checksum.dir/decode-checksum.c.s
+.PHONY : decode-checksum.c.s
 
 decode-parity.o: decode-parity.c.o
 
@@ -299,12 +339,16 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... bit"
+	@echo "... decode-checksum"
 	@echo "... decode-parity"
 	@echo "... encode-checksum"
 	@echo "... encode-parity"
 	@echo "... bit_masking.o"
 	@echo "... bit_masking.i"
 	@echo "... bit_masking.s"
+	@echo "... decode-checksum.o"
+	@echo "... decode-checksum.i"
+	@echo "... decode-checksum.s"
 	@echo "... decode-parity.o"
 	@echo "... decode-parity.i"
 	@echo "... decode-parity.s"
