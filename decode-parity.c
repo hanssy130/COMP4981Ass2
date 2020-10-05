@@ -20,7 +20,7 @@ void decode_parity(char * val, bool odd_parity) {
 void parity_check(char * parity_message, bool odd, int index) {
 	int count = 0;
 	
-	for(int i = 0; i < strlen(parity_message); i++) {
+	for(size_t i = 0; i < strlen(parity_message); i++) {
 		if (parity_message[i] == '1') {
 			count++;
 		}
