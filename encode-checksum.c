@@ -10,6 +10,11 @@ int main(int argc, const char* argv[]) {
         perror("please specify --parity <input>");
     if (argv[2] == 0) { // read from stdin
         str = read_from_stdin();
+    } else if (strstr(argv[2], ".")) {
+        char* filename = malloc(sizeof(char) * (strlen(argv[2])+1) );
+        strcpy(filename, argv[2]);
+        str = read_from_file(filename);
+        free(filename);
     } else { // read from command line
         if (!str) {
             perror("Failed malloc");
@@ -20,7 +25,9 @@ int main(int argc, const char* argv[]) {
 
     char list[strlen(str)][NUM_BITS];
     for (size_t i = 0; i < strlen(str); i++) {
-        strcpy(list[i], display(str[i], odd));
+        char * printable_bits = display(str[i], odd, true);
+        strcpy(list[i], printable_bits);
+        free(printable_bits);
     }
     checksum(list, result, strlen(str), odd);
     free(str);

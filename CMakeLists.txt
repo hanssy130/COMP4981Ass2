@@ -9,7 +9,7 @@ add_library(bit STATIC bit_masking.c)
 target_compile_options(bit PRIVATE -Wpedantic -Wall -Wextra)
 
 # encode-parity decode-parity
-add_executable(encode-parity encode-parity.c bit_masking.c)
+add_executable(encode-parity encode-parity.c)
 target_link_libraries(encode-parity bit)
 target_compile_options(encode-parity PRIVATE -Wpedantic -Wall -Wextra)
 
@@ -17,7 +17,7 @@ target_compile_options(encode-parity PRIVATE -Wpedantic -Wall -Wextra)
 #target_compile_options(decode-parity PRIVATE -Wpedantic -Wall -Wextra)
 
 # encode-checksum decode-checksum
-add_executable(encode-checksum encode-checksum.c bit_masking.c)
+add_executable(encode-checksum encode-checksum.c)
 target_link_libraries(encode-checksum bit)
 target_compile_options(encode-checksum PRIVATE -Wpedantic -Wall -Wextra)
 
@@ -26,6 +26,7 @@ target_compile_options(encode-checksum PRIVATE -Wpedantic -Wall -Wextra)
 
 # encode-crc32 decode-crc32
 #add_executable(encode-crc32 encode-crc32.c)
+#target_link_libraries(encode-crc32 bit)
 #target_compile_options(encode-crc32 PRIVATE -Wpedantic -Wall -Wextra)
 
 #add_executable(decode-crc32 decode-crc32.c)

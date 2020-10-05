@@ -47,4 +47,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/bit.dir/DependInfo.cmake"
   "CMakeFiles/encode-parity.dir/DependInfo.cmake"
   "CMakeFiles/encode-checksum.dir/DependInfo.cmake"
+  "CMakeFiles/encode-crc32.dir/DependInfo.cmake"
   )

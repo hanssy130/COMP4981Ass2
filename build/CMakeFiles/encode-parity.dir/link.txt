@@ -1,1 +1,1 @@
-/usr/bin/cc CMakeFiles/encode-parity.dir/encode-parity.c.o CMakeFiles/encode-parity.dir/bit_masking.c.o -o encode-parity  libbit.a 
+/usr/bin/cc CMakeFiles/encode-parity.dir/encode-parity.c.o -o encode-parity  libbit.a 

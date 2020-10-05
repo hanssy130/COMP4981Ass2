@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/billy/Desktop/COMP4981/COMP4981Ass2/bit_masking.c
-bit_masking.h
-/home/billy/Desktop/COMP4981/COMP4981Ass2/bit_masking.h
-
 /home/billy/Desktop/COMP4981/COMP4981Ass2/bit_masking.h
 stdio.h
 -
@@ -21,4 +17,10 @@ stdlib.h
 -
 string.h
 -
+
+/home/billy/Desktop/COMP4981/COMP4981Ass2/encode-checksum.c
+stdio.h
+-
+bit_masking.h
+/home/billy/Desktop/COMP4981/COMP4981Ass2/bit_masking.h
 

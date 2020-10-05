@@ -174,9 +174,7 @@ bit_masking.o: bit_masking.c.o
 
 # target to build an object file
 bit_masking.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode-checksum.dir/build.make CMakeFiles/encode-checksum.dir/bit_masking.c.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bit.dir/build.make CMakeFiles/bit.dir/bit_masking.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode-parity.dir/build.make CMakeFiles/encode-parity.dir/bit_masking.c.o
 .PHONY : bit_masking.c.o
 
 bit_masking.i: bit_masking.c.i
@@ -185,9 +183,7 @@ bit_masking.i: bit_masking.c.i
 
 # target to preprocess a source file
 bit_masking.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode-checksum.dir/build.make CMakeFiles/encode-checksum.dir/bit_masking.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bit.dir/build.make CMakeFiles/bit.dir/bit_masking.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode-parity.dir/build.make CMakeFiles/encode-parity.dir/bit_masking.c.i
 .PHONY : bit_masking.c.i
 
 bit_masking.s: bit_masking.c.s
@@ -196,9 +192,7 @@ bit_masking.s: bit_masking.c.s
 
 # target to generate assembly for a file
 bit_masking.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode-checksum.dir/build.make CMakeFiles/encode-checksum.dir/bit_masking.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bit.dir/build.make CMakeFiles/bit.dir/bit_masking.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode-parity.dir/build.make CMakeFiles/encode-parity.dir/bit_masking.c.s
 .PHONY : bit_masking.c.s
 
 encode-checksum.o: encode-checksum.c.o

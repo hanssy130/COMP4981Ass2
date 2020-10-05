@@ -27,6 +27,16 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="bit">
 				<Option output="/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/libbit.a" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug"/>
@@ -147,11 +157,41 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="edit_cache">
+			<Target title="encode-crc32">
+				<Option output="/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/encode-crc32" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug"/>
-				<Option type="4"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/billy/Desktop/COMP4981/COMP4981Ass2/."/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 encode-crc32"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="encode-crc32/fast">
+				<Option output="/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/encode-crc32" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/billy/Desktop/COMP4981/COMP4981Ass2/."/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 encode-crc32/fast"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -170,6 +210,9 @@
 		</Unit>
 		<Unit filename="/home/billy/Desktop/COMP4981/COMP4981Ass2/encode-checksum.c">
 			<Option target="encode-checksum"/>
+		</Unit>
+		<Unit filename="/home/billy/Desktop/COMP4981/COMP4981Ass2/encode-crc32.c">
+			<Option target="encode-crc32"/>
 		</Unit>
 		<Unit filename="/home/billy/Desktop/COMP4981/COMP4981Ass2/encode-parity.c">
 			<Option target="encode-parity"/>
