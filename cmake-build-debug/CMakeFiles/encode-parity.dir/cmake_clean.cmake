@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/encode-parity.dir/bit_masking.c.o"
   "CMakeFiles/encode-parity.dir/encode-parity.c.o"
   "encode-parity"
   "encode-parity.pdb"

@@ -4,7 +4,6 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/billy/Desktop/COMP4981/COMP4981Ass2/bit_masking.c" "/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/CMakeFiles/decode-parity.dir/bit_masking.c.o"
   "/home/billy/Desktop/COMP4981/COMP4981Ass2/decode-parity.c" "/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/CMakeFiles/decode-parity.dir/decode-parity.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
@@ -16,6 +15,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
+  "/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/CMakeFiles/bit.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/encode-checksum.dir/bit_masking.c.o"
   "CMakeFiles/encode-checksum.dir/encode-checksum.c.o"
   "encode-checksum"
   "encode-checksum.pdb"

@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/decode-parity.dir/bit_masking.c.o"
   "CMakeFiles/decode-parity.dir/decode-parity.c.o"
   "decode-parity"
   "decode-parity.pdb"

@@ -33,6 +33,9 @@ void to_printable_binary_w_parity(bool bits[8], char printable[NUM_BITS], bool p
 
 char **getlist(char printable[NUM_BITS], size_t len);
 
+/** DECODE-PARITY */
+void decode(char* bits);
+
 /** ENCODE-CHECKSUM */
 void to_printable_binary(bool bits[8], char printable[10]);
 void checksum(char list[][NUM_BITS], char result[NUM_BITS], size_t len, bool odd);

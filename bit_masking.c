@@ -43,6 +43,7 @@ char* read_from_file(char* filename) {
         }
         str[i++] = c;
     }
+    fclose(fp);
     return str;
 }
 
@@ -200,6 +201,32 @@ void crc32(char *message) {
         if (message[i] == '1')
 
         i++;
+    }
+}
+
+void decode(char* bits) {
+    int counter = 0, total = 0;
+    for (size_t i = 0; i < strlen(bits); i++) {
+        if (i % 9 == 0) // new 8-bit string
+            counter = 0;
+        if (i % 7 != 0) {
+            int dec = 1;
+            if (bits[i] == '1')
+            {
+
+                for (int pow = 7 - counter; pow > 0; pow--) {
+                    dec *= 2;
+                }
+
+                total += dec;
+            }
+        }
+        counter++;
+        if (counter == 8) {
+            char c = (char) (total);
+            printf("%c", c);
+            total = 0;
+        }
     }
 }
 
