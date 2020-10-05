@@ -1,88 +1,70 @@
 #include <stdio.h>
-#include <stdint.h>
-#include <stdbool.h>
-#include <stdlib.h>
-#include <string.h>
+#include "bit_masking.h"
 
-#define LINESIZE 1024
+void decode_parity(char * val, bool odd_parity) {
+    char *parity_message = malloc(sizeof(char) * (strlen(val)+1) );
+    
+    for (size_t j = 0; j < strlen(val)/9; j++) {
+        strncpy(parity_message, val+(j*9), (j+1)*9);
+        parity_message[9] = '\0';
+       
+        parity_check(parity_message, odd_parity, j);       	
+        
+        bit_to_char_printer(parity_message);
+    }
+}
 
-void display(char* bits, bool parity);
-void to_char(char* bits, char* decoded);
-char * read_from_stdin();
+void parity_check(char * parity_message, bool odd, int index) {
+	int count = 0;
+	
+	for(int i = 0; i < strlen(parity_message); i++) {
+		if (parity_message[i] == '1') {
+			count++;
+		}
+	}
+	
+	if (count % 2 == 0 && odd) {
+		printf("\n--Bad parity at block %d--\n", index);
+	} 
+	if (count % 2 == 1 && !odd) {
+		printf("\n--Bad parity at block %d--\n", index);
+	}
+}
 
-int main(int argc, const  char* argv[]) {
-    char *bits;
-    bool odd = false;
+void bit_to_char_printer(char * parity_message) {
+    	char bit_message[10];
+	unsigned char character;
+    	
+    	strncpy(bit_message, parity_message, 8);
+    	bit_message[8] = '\0';
+	character = strtol(bit_message, 0, 2);
+	printf("%c", character);
+}
+
+int main(int argc, const char* argv[]) {
+    char *str = malloc(sizeof(char) * (strlen(argv[2])+1) );;
+    bool odd = get_opt(argv[1]);
 
     if (argc < 2)
         perror("please specify --parity <input>");
-
-    if (strcmp(argv[1], "--odd") == 0){
-        odd = true;
-    }
-    if (strcmp(argv[1], "--odd") != 0 && strcmp(argv[1], "--even") != 0)
-        perror("please specify --parity");
-
     if (argv[2] == 0) { // read from stdin
-        bits = read_from_stdin();
+        str = read_from_stdin();
+    } else if (strstr(argv[2], ".")) {
+        char* filename = malloc(sizeof(char) * (strlen(argv[2])+1) );
+        strcpy(filename, argv[2]);
+        str = read_from_file(filename);
+        free(filename);
     } else { // read from command line
-        bits = malloc(sizeof(char) * (strlen(argv[2])+1) );
-        if (!bits) { 
+        if (!str) {
             perror("Failed malloc");
             exit(EXIT_FAILURE);
-        }   
-        strcpy(bits, argv[2]);
+        }
+        strcpy(str, argv[2]);
     }
-
-    for (size_t j = 0; j < strlen(bits); j++) {
-        display(bits, odd);
-    }
-    free(bits);
-
-    return 0;
-}
-
-char * read_from_stdin() {
-    char *bits = malloc(LINESIZE *sizeof(char));
-    if (!bits) { 
-        perror("Failed malloc");
-        exit(EXIT_FAILURE);
-    }  
-    fgets(bits, LINESIZE, stdin); 
-    if (bits[strlen(bits)-1] == '\n') // case where input file does not have \n character
-        bits[strlen(bits)-1]='\0';
-    return bits;
-}
-
-void to_char(char* bits, char* decoded) {
-    printf("in to_char\n");
-    char* nine_bits[9];
-    size_t counter = 0;
-    // for (size_t i = 0; i < strlen(decoded); i++) {
-    //     printf("in loop %ld", i);
-    //     for (size_t j = 0; j < 9;j++) {
-    //         strcpy(nine_bits[j], bits[counter]);
-    //         printf("%c", bits[counter]);
-    //         counter++;
-    //     }
-    //     char c = strtol(*nine_bits, 0, 2);
-    //     printf("%c", c);
-    //     decoded[i] = c;
-    // }
-    // decoded[strlen(decoded)+1]='\0';
-}
-
-void display(char* bits, bool parity)
-{
-    char *decoded;
-    to_char(bits, decoded);
-    printf("%s", decoded);
-    printf("bits: %s\n", bits);
-    // printf("hex: %x\n", val);
-    // printf("HEX: %X\n", val);
-    // printf("decimal: %d\n", val);
-    // printf("octal: %o\n", val);
-    for (size_t i = 0; i < strlen(decoded); i++)
-        printf("char: %c", decoded[i]);
+    
+    decode_parity(str, odd);
+    
     printf("\n");
+    free(str);
+    return 0;
 }
