@@ -1,1 +1,0 @@
-/usr/bin/cc CMakeFiles/decode.dir/decode-parity.c.o -o decode 

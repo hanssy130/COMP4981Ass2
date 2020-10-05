@@ -1,1 +1,0 @@
-/usr/bin/cc CMakeFiles/decode-checksum.dir/decode-checksum.c.o -o decode-checksum 

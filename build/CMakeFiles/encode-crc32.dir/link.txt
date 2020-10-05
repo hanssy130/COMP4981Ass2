@@ -1,1 +1,0 @@
-/usr/bin/cc CMakeFiles/encode-crc32.dir/encode-crc32.c.o -o encode-crc32 

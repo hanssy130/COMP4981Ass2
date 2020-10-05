@@ -1,2 +1,0 @@
-/usr/bin/ar qc libbit_masking.a CMakeFiles/bit_masking.dir/bit_masking.c.o
-/usr/bin/ranlib libbit_masking.a

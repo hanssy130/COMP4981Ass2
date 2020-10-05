@@ -73,8 +73,8 @@ CMAKE_BINARY_DIR = /home/billy/Desktop/COMP4981/COMP4981Ass2/build
 
 # The main recursive "all" target.
 all: CMakeFiles/encode-checksum.dir/all
+all: CMakeFiles/bit.dir/all
 all: CMakeFiles/encode-parity.dir/all
-all: CMakeFiles/decode-parity.dir/all
 
 .PHONY : all
 
@@ -85,8 +85,8 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/encode-checksum.dir/clean
+clean: CMakeFiles/bit.dir/clean
 clean: CMakeFiles/encode-parity.dir/clean
-clean: CMakeFiles/decode-parity.dir/clean
 
 .PHONY : clean
 
@@ -94,15 +94,15 @@ clean: CMakeFiles/decode-parity.dir/clean
 # Target rules for target CMakeFiles/encode-checksum.dir
 
 # All Build rule for target.
-CMakeFiles/encode-checksum.dir/all:
+CMakeFiles/encode-checksum.dir/all: CMakeFiles/bit.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode-checksum.dir/build.make CMakeFiles/encode-checksum.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode-checksum.dir/build.make CMakeFiles/encode-checksum.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/billy/Desktop/COMP4981/COMP4981Ass2/build/CMakeFiles --progress-num=3,4 "Built target encode-checksum"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/billy/Desktop/COMP4981/COMP4981Ass2/build/CMakeFiles --progress-num=3,4,5 "Built target encode-checksum"
 .PHONY : CMakeFiles/encode-checksum.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/encode-checksum.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/billy/Desktop/COMP4981/COMP4981Ass2/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/billy/Desktop/COMP4981/COMP4981Ass2/build/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/encode-checksum.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/billy/Desktop/COMP4981/COMP4981Ass2/build/CMakeFiles 0
 .PHONY : CMakeFiles/encode-checksum.dir/rule
@@ -118,18 +118,45 @@ CMakeFiles/encode-checksum.dir/clean:
 .PHONY : CMakeFiles/encode-checksum.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/bit.dir
+
+# All Build rule for target.
+CMakeFiles/bit.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bit.dir/build.make CMakeFiles/bit.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bit.dir/build.make CMakeFiles/bit.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/billy/Desktop/COMP4981/COMP4981Ass2/build/CMakeFiles --progress-num=1,2 "Built target bit"
+.PHONY : CMakeFiles/bit.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/bit.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/billy/Desktop/COMP4981/COMP4981Ass2/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/bit.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/billy/Desktop/COMP4981/COMP4981Ass2/build/CMakeFiles 0
+.PHONY : CMakeFiles/bit.dir/rule
+
+# Convenience name for target.
+bit: CMakeFiles/bit.dir/rule
+
+.PHONY : bit
+
+# clean rule for target.
+CMakeFiles/bit.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bit.dir/build.make CMakeFiles/bit.dir/clean
+.PHONY : CMakeFiles/bit.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/encode-parity.dir
 
 # All Build rule for target.
-CMakeFiles/encode-parity.dir/all:
+CMakeFiles/encode-parity.dir/all: CMakeFiles/bit.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode-parity.dir/build.make CMakeFiles/encode-parity.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode-parity.dir/build.make CMakeFiles/encode-parity.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/billy/Desktop/COMP4981/COMP4981Ass2/build/CMakeFiles --progress-num=5,6 "Built target encode-parity"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/billy/Desktop/COMP4981/COMP4981Ass2/build/CMakeFiles --progress-num=6,7,8 "Built target encode-parity"
 .PHONY : CMakeFiles/encode-parity.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/encode-parity.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/billy/Desktop/COMP4981/COMP4981Ass2/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/billy/Desktop/COMP4981/COMP4981Ass2/build/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/encode-parity.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/billy/Desktop/COMP4981/COMP4981Ass2/build/CMakeFiles 0
 .PHONY : CMakeFiles/encode-parity.dir/rule
@@ -143,33 +170,6 @@ encode-parity: CMakeFiles/encode-parity.dir/rule
 CMakeFiles/encode-parity.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode-parity.dir/build.make CMakeFiles/encode-parity.dir/clean
 .PHONY : CMakeFiles/encode-parity.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/decode-parity.dir
-
-# All Build rule for target.
-CMakeFiles/decode-parity.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/decode-parity.dir/build.make CMakeFiles/decode-parity.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/decode-parity.dir/build.make CMakeFiles/decode-parity.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/billy/Desktop/COMP4981/COMP4981Ass2/build/CMakeFiles --progress-num=1,2 "Built target decode-parity"
-.PHONY : CMakeFiles/decode-parity.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/decode-parity.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/billy/Desktop/COMP4981/COMP4981Ass2/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/decode-parity.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/billy/Desktop/COMP4981/COMP4981Ass2/build/CMakeFiles 0
-.PHONY : CMakeFiles/decode-parity.dir/rule
-
-# Convenience name for target.
-decode-parity: CMakeFiles/decode-parity.dir/rule
-
-.PHONY : decode-parity
-
-# clean rule for target.
-CMakeFiles/decode-parity.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/decode-parity.dir/build.make CMakeFiles/decode-parity.dir/clean
-.PHONY : CMakeFiles/decode-parity.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

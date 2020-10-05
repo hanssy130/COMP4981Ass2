@@ -6,5 +6,5 @@ C_DEFINES =
 
 C_INCLUDES = -I/home/billy/Desktop/COMP4981/COMP4981Ass2/.
 
-C_FLAGS =  -Wall -Wextra -Wpedantic -Wpedantic -Wall -Wextra -std=gnu11
+C_FLAGS = -Wpedantic -Wall -Wextra -std=gnu11
 
