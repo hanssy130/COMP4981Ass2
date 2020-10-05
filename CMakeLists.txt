@@ -13,8 +13,9 @@ add_executable(encode-parity encode-parity.c)
 target_link_libraries(encode-parity bit)
 target_compile_options(encode-parity PRIVATE -Wpedantic -Wall -Wextra)
 
-#add_executable(decode-parity decode-parity.c bit_masking.c bit_masking.h)
-#target_compile_options(decode-parity PRIVATE -Wpedantic -Wall -Wextra)
+add_executable(decode-parity decode-parity.c bit_masking.c bit_masking.h)
+target_link_libraries(decode-parity bit)
+target_compile_options(decode-parity PRIVATE -Wpedantic -Wall -Wextra)
 
 # encode-checksum decode-checksum
 add_executable(encode-checksum encode-checksum.c)
