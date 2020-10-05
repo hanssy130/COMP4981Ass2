@@ -4,7 +4,7 @@
 
 #include "bit_masking.h"
 
- char * read_from_stdin() {
+char * read_from_stdin() {
     char *str = malloc(LINESIZE *sizeof(char));
     if (!str) {
         perror("Failed malloc");
@@ -14,6 +14,17 @@
     if (str[strlen(str)-1] == '\n') // case where input file does not have \n character
         str[strlen(str)-1]='\0';
     return str;
+}
+
+int get_opt(const char argv[]) {
+    if (strcmp(argv, "--odd") == 0){
+        return 1;
+    } else if (strcmp(argv, "--even") == 0) {
+        return 0;
+    } else {
+        perror("please specify --parity");
+        exit(EXIT_FAILURE);
+    }
 }
 
  void to_binary(int8_t val, bool bits[8]) {
@@ -125,3 +136,4 @@
         return 1;
     return 0;
 }
+

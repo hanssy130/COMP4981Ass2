@@ -114,6 +114,7 @@ encode__checksum_EXTERNAL_OBJECTS =
 encode-checksum: CMakeFiles/encode-checksum.dir/encode-checksum.c.o
 encode-checksum: CMakeFiles/encode-checksum.dir/bit_masking.c.o
 encode-checksum: CMakeFiles/encode-checksum.dir/build.make
+encode-checksum: libbit.a
 encode-checksum: CMakeFiles/encode-checksum.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable encode-checksum"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/encode-checksum.dir/link.txt --verbose=$(VERBOSE)

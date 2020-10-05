@@ -44,6 +44,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/bit.dir/DependInfo.cmake"
   "CMakeFiles/encode-parity.dir/DependInfo.cmake"
-  "CMakeFiles/COMP4981Ass2.dir/DependInfo.cmake"
+  "CMakeFiles/encode-checksum.dir/DependInfo.cmake"
   )

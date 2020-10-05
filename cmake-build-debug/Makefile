@@ -76,17 +76,6 @@ CMAKE_BINARY_DIR = /home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/billy/Downloads/clion-2020.2.1/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -97,6 +86,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/home/billy/Downloads/clion-2020.2.1/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -131,6 +131,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named bit
+
+# Build rule for target.
+bit: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bit
+.PHONY : bit
+
+# fast build rule for target.
+bit/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bit.dir/build.make CMakeFiles/bit.dir/build
+.PHONY : bit/fast
+
+#=============================================================================
 # Target rules for targets named encode-parity
 
 # Build rule for target.
@@ -144,17 +157,17 @@ encode-parity/fast:
 .PHONY : encode-parity/fast
 
 #=============================================================================
-# Target rules for targets named COMP4981Ass2
+# Target rules for targets named encode-checksum
 
 # Build rule for target.
-COMP4981Ass2: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 COMP4981Ass2
-.PHONY : COMP4981Ass2
+encode-checksum: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 encode-checksum
+.PHONY : encode-checksum
 
 # fast build rule for target.
-COMP4981Ass2/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/COMP4981Ass2.dir/build.make CMakeFiles/COMP4981Ass2.dir/build
-.PHONY : COMP4981Ass2/fast
+encode-checksum/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode-checksum.dir/build.make CMakeFiles/encode-checksum.dir/build
+.PHONY : encode-checksum/fast
 
 bit_masking.o: bit_masking.c.o
 
@@ -162,8 +175,9 @@ bit_masking.o: bit_masking.c.o
 
 # target to build an object file
 bit_masking.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bit.dir/build.make CMakeFiles/bit.dir/bit_masking.c.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode-parity.dir/build.make CMakeFiles/encode-parity.dir/bit_masking.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/COMP4981Ass2.dir/build.make CMakeFiles/COMP4981Ass2.dir/bit_masking.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode-checksum.dir/build.make CMakeFiles/encode-checksum.dir/bit_masking.c.o
 .PHONY : bit_masking.c.o
 
 bit_masking.i: bit_masking.c.i
@@ -172,8 +186,9 @@ bit_masking.i: bit_masking.c.i
 
 # target to preprocess a source file
 bit_masking.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bit.dir/build.make CMakeFiles/bit.dir/bit_masking.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode-parity.dir/build.make CMakeFiles/encode-parity.dir/bit_masking.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/COMP4981Ass2.dir/build.make CMakeFiles/COMP4981Ass2.dir/bit_masking.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode-checksum.dir/build.make CMakeFiles/encode-checksum.dir/bit_masking.c.i
 .PHONY : bit_masking.c.i
 
 bit_masking.s: bit_masking.c.s
@@ -182,9 +197,37 @@ bit_masking.s: bit_masking.c.s
 
 # target to generate assembly for a file
 bit_masking.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bit.dir/build.make CMakeFiles/bit.dir/bit_masking.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode-parity.dir/build.make CMakeFiles/encode-parity.dir/bit_masking.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/COMP4981Ass2.dir/build.make CMakeFiles/COMP4981Ass2.dir/bit_masking.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode-checksum.dir/build.make CMakeFiles/encode-checksum.dir/bit_masking.c.s
 .PHONY : bit_masking.c.s
+
+encode-checksum.o: encode-checksum.c.o
+
+.PHONY : encode-checksum.o
+
+# target to build an object file
+encode-checksum.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode-checksum.dir/build.make CMakeFiles/encode-checksum.dir/encode-checksum.c.o
+.PHONY : encode-checksum.c.o
+
+encode-checksum.i: encode-checksum.c.i
+
+.PHONY : encode-checksum.i
+
+# target to preprocess a source file
+encode-checksum.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode-checksum.dir/build.make CMakeFiles/encode-checksum.dir/encode-checksum.c.i
+.PHONY : encode-checksum.c.i
+
+encode-checksum.s: encode-checksum.c.s
+
+.PHONY : encode-checksum.s
+
+# target to generate assembly for a file
+encode-checksum.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encode-checksum.dir/build.make CMakeFiles/encode-checksum.dir/encode-checksum.c.s
+.PHONY : encode-checksum.c.s
 
 encode-parity.o: encode-parity.c.o
 
@@ -221,11 +264,15 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... COMP4981Ass2"
+	@echo "... bit"
+	@echo "... encode-checksum"
 	@echo "... encode-parity"
 	@echo "... bit_masking.o"
 	@echo "... bit_masking.i"
 	@echo "... bit_masking.s"
+	@echo "... encode-checksum.o"
+	@echo "... encode-checksum.i"
+	@echo "... encode-checksum.s"
 	@echo "... encode-parity.o"
 	@echo "... encode-parity.i"
 	@echo "... encode-parity.s"

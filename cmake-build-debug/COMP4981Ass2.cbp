@@ -17,11 +17,51 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="edit_cache">
+			<Target title="rebuild_cache">
 				<Option working_dir="/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="bit">
+				<Option output="/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/libbit.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/billy/Desktop/COMP4981/COMP4981Ass2/."/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 bit"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="bit/fast">
+				<Option output="/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/libbit.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/billy/Desktop/COMP4981/COMP4981Ass2/."/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 bit/fast"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -67,51 +107,51 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="rebuild_cache">
+			<Target title="encode-checksum">
+				<Option output="/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/encode-checksum" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/billy/Desktop/COMP4981/COMP4981Ass2/."/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 encode-checksum"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="encode-checksum/fast">
+				<Option output="/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/encode-checksum" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/billy/Desktop/COMP4981/COMP4981Ass2/."/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 encode-checksum/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
 				<Option working_dir="/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="COMP4981Ass2">
-				<Option output="/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/COMP4981Ass2" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/home/billy/Desktop/COMP4981/COMP4981Ass2/."/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 COMP4981Ass2"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="COMP4981Ass2/fast">
-				<Option output="/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/COMP4981Ass2" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/home/billy/Desktop/COMP4981/COMP4981Ass2/."/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 COMP4981Ass2/fast"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -119,12 +159,17 @@
 			</Target>
 		</Build>
 		<Unit filename="/home/billy/Desktop/COMP4981/COMP4981Ass2/bit_masking.c">
+			<Option target="bit"/>
 			<Option target="encode-parity"/>
-			<Option target="COMP4981Ass2"/>
+			<Option target="encode-checksum"/>
 		</Unit>
 		<Unit filename="/home/billy/Desktop/COMP4981/COMP4981Ass2/bit_masking.h">
+			<Option target="bit"/>
 			<Option target="encode-parity"/>
-			<Option target="COMP4981Ass2"/>
+			<Option target="encode-checksum"/>
+		</Unit>
+		<Unit filename="/home/billy/Desktop/COMP4981/COMP4981Ass2/encode-checksum.c">
+			<Option target="encode-checksum"/>
 		</Unit>
 		<Unit filename="/home/billy/Desktop/COMP4981/COMP4981Ass2/encode-parity.c">
 			<Option target="encode-parity"/>

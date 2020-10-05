@@ -114,6 +114,7 @@ encode__parity_EXTERNAL_OBJECTS =
 encode-parity: CMakeFiles/encode-parity.dir/encode-parity.c.o
 encode-parity: CMakeFiles/encode-parity.dir/bit_masking.c.o
 encode-parity: CMakeFiles/encode-parity.dir/build.make
+encode-parity: libbit.a
 encode-parity: CMakeFiles/encode-parity.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable encode-parity"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/encode-parity.dir/link.txt --verbose=$(VERBOSE)
