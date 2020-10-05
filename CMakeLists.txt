@@ -6,6 +6,8 @@ set(CMAKE_C_FLAGS  "${CMAKE_C_FLAGS} -Wall -Wextra -Wpedantic")
 
 include_directories(.)
 
+add_executable(COMP4981Ass2 bit_masking.c bit_masking.h)
+
 # encode-parity decode-parity
 add_executable(encode-parity encode-parity.c)
 target_compile_options(encode-parity PRIVATE -Wpedantic -Wall -Wextra)

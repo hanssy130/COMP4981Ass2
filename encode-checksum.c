@@ -53,9 +53,6 @@ int main(int argc, const char* argv[]) {
         strcpy(list[i], display(str[i], odd));
     }
     checksum(list, result, strlen(str), odd);
-    printf("%d\n", test_case("011100001011101011010010101001101111010100011011100111010000111011100100010110100011001100010001110010011111001101100010100110011010010001101001010011010011010111010110001010100110010010101", 
-    "011100001011101011010010101001101111010100011011100111010000111011100100010110100011001100010001110010011111001101100010100110011010010001101001010011010011010111010110001010100110"));
-    printf("result:\011100001011101011010010101001101111010100011011100111010000111011100100010110100011001100010001110010011111001101100010100110011010010001101001010011010011010111010110001010100110011010111\n");
     free(str);
 }
 
@@ -116,20 +113,25 @@ void to_printable_binary(bool bits[8], char printable[10], bool parity)
             printable[i] = '0';
         }
     }
-     if (parity) { // odd parity
-         if (counter % 2 == 0) { // even
-             printable[8] = '1';
-         } else { // odd
-             printable[8] = '0';
-         }
-     } else { //even parity
-         if (counter % 2 == 0) { // even
-             printable[8] = '0';   
-         } else { // odd
-             printable[8] = '1';
-         }
-     }
-    
+    /* ODD PARITY*/
+    if (parity) {
+        /* EVEN 1s */
+        if (counter % 2 == 0) { 
+            printable[8] = '1';
+        /* ODD 1s*/ 
+        } else {
+            printable[8] = '0';
+        }
+    /* EVEN PARITY*/
+    } else {
+        /* EVEN 1s */
+        if (counter % 2 == 0) { // even
+            printable[8] = '0';
+        /* ODD 1s*/    
+        } else { 
+            printable[8] = '1';
+        }
+    }
     printable[9] = '\0';
 }
 
@@ -155,7 +157,6 @@ void checksum(char list[][NUM_BITS], char result[NUM_BITS], size_t len, bool odd
         }
         result[9]='\0';
     }
-    //printf("%c\n", list[0][0]);
     for (size_t y = 0; y < len; y++)
             printf("%s", list[y]);
     printf("%s\n", result);
