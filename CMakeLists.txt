@@ -35,5 +35,5 @@ target_compile_options(encode-crc32 PRIVATE -Wpedantic -Wall -Wextra)
 
 # decode-crc32
 add_executable(decode-crc32 decode-crc32.c)
-target_link_libraries(encode-crc32 bit)
+target_link_libraries(decode-crc32 bit)
 target_compile_options(decode-crc32 PRIVATE -Wpedantic -Wall -Wextra)

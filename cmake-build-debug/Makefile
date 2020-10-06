@@ -131,6 +131,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named decode-crc32
+
+# Build rule for target.
+decode-crc32: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 decode-crc32
+.PHONY : decode-crc32
+
+# fast build rule for target.
+decode-crc32/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/decode-crc32.dir/build.make CMakeFiles/decode-crc32.dir/build
+.PHONY : decode-crc32/fast
+
+#=============================================================================
 # Target rules for targets named encode-crc32
 
 # Build rule for target.
@@ -262,6 +275,33 @@ decode-checksum.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/decode-checksum.dir/build.make CMakeFiles/decode-checksum.dir/decode-checksum.c.s
 .PHONY : decode-checksum.c.s
 
+decode-crc32.o: decode-crc32.c.o
+
+.PHONY : decode-crc32.o
+
+# target to build an object file
+decode-crc32.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/decode-crc32.dir/build.make CMakeFiles/decode-crc32.dir/decode-crc32.c.o
+.PHONY : decode-crc32.c.o
+
+decode-crc32.i: decode-crc32.c.i
+
+.PHONY : decode-crc32.i
+
+# target to preprocess a source file
+decode-crc32.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/decode-crc32.dir/build.make CMakeFiles/decode-crc32.dir/decode-crc32.c.i
+.PHONY : decode-crc32.c.i
+
+decode-crc32.s: decode-crc32.c.s
+
+.PHONY : decode-crc32.s
+
+# target to generate assembly for a file
+decode-crc32.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/decode-crc32.dir/build.make CMakeFiles/decode-crc32.dir/decode-crc32.c.s
+.PHONY : decode-crc32.c.s
+
 decode-parity.o: decode-parity.c.o
 
 .PHONY : decode-parity.o
@@ -380,6 +420,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... bit"
 	@echo "... decode-checksum"
+	@echo "... decode-crc32"
 	@echo "... decode-parity"
 	@echo "... encode-checksum"
 	@echo "... encode-crc32"
@@ -390,6 +431,9 @@ help:
 	@echo "... decode-checksum.o"
 	@echo "... decode-checksum.i"
 	@echo "... decode-checksum.s"
+	@echo "... decode-crc32.o"
+	@echo "... decode-crc32.i"
+	@echo "... decode-crc32.s"
 	@echo "... decode-parity.o"
 	@echo "... decode-parity.i"
 	@echo "... decode-parity.s"

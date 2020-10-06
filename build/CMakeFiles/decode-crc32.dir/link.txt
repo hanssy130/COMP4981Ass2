@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/decode-crc32.dir/decode-crc32.c.o -o decode-crc32  libbit.a 

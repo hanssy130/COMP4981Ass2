@@ -1,5 +1,6 @@
 /home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/CMakeFiles/decode-crc32.dir
 /home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/CMakeFiles/encode-crc32.dir
 /home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/CMakeFiles/decode-checksum.dir
 /home/billy/Desktop/COMP4981/COMP4981Ass2/cmake-build-debug/CMakeFiles/encode-checksum.dir
