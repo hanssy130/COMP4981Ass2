@@ -1,5 +1,7 @@
 # COMP4981Ass2
 
+This assignment is done by Vu Phuong Quynh (Billy) Nguyen and Hans Sy.
+
 ## Specification
 
 You are to create 6 programs to encode and decode parity, checksum, crc32. The program names are:
