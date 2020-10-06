@@ -146,7 +146,7 @@ void to_printable_binary(bool bits[8], char printable[9])
     printable[8] = '\0';
 }
 
- void encode_checksum(char list[][NUM_BITS], char result[NUM_BITS], size_t len, bool odd) {
+ void encode_checksum(char list[][NUM_BITS], char result[NUM_BITS-1], size_t len, bool odd) {
     strcpy(result, list[0]);
     for (size_t j = 1; j < len; j++) {
         for (size_t z = 0; z < NUM_BITS - 1; z++) {
