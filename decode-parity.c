@@ -71,7 +71,6 @@ int main(int argc, const char* argv[]) {
             str = read_from_file(filename);
             free(filename);
         } else { // read from command line
-            str = malloc(sizeof(char) * (strlen(argv[2]) + 1));
             if (!str) {
                 perror("Failed malloc");
                 exit(EXIT_FAILURE);
