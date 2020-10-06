@@ -52,18 +52,18 @@ int main(int argc, const char* argv[]) {
         parity_message[9] = '\0';
         
         if (j == strlen(str)/9 - 1) {	
-        	printf("cheksum: ^%s^ || paritymsg: ^%s^", building_checksum, parity_message);
+        	// printf("cheksum: ^%s^ || paritymsg: ^%s^", building_checksum, parity_message);
 		if (strcmp(building_checksum, parity_message) != 0) {
 			perror("Checksum input invalid");
 		}
         } else {
-		// bit_to_char_printer(parity_message);
+		bit_to_char_printer(parity_message);
         	
 		for (int i = 0; i < 9; i++) {
 		        	if (strlen(next_message) <= 9) {
 				break;
 		}
-			printf("%c %c\n", building_checksum[i], next_message[i]);
+			// printf("%c %c\n", building_checksum[i], next_message[i]);
 			if (odd) {
 				if (building_checksum[i] == next_message[i]) {
 					building_checksum[i] = '1';
@@ -78,7 +78,7 @@ int main(int argc, const char* argv[]) {
 				}
 			}
 		}
-		printf("buildingchecksum: %s || next msg: %s\n", building_checksum, next_message);
+		// printf("buildingchecksum: %s || next msg: %s\n", building_checksum, next_message);
         }
     }
     
