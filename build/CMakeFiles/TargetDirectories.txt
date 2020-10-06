@@ -1,7 +1,8 @@
-/home/billy/Desktop/COMP4981/COMP4981Ass2/build/CMakeFiles/rebuild_cache.dir
+/home/billy/Desktop/COMP4981/COMP4981Ass2/build/CMakeFiles/edit_cache.dir
+/home/billy/Desktop/COMP4981/COMP4981Ass2/build/CMakeFiles/encode-parity.dir
 /home/billy/Desktop/COMP4981/COMP4981Ass2/build/CMakeFiles/bit.dir
 /home/billy/Desktop/COMP4981/COMP4981Ass2/build/CMakeFiles/decode-parity.dir
+/home/billy/Desktop/COMP4981/COMP4981Ass2/build/CMakeFiles/rebuild_cache.dir
+/home/billy/Desktop/COMP4981/COMP4981Ass2/build/CMakeFiles/encode-crc32.dir
 /home/billy/Desktop/COMP4981/COMP4981Ass2/build/CMakeFiles/encode-checksum.dir
 /home/billy/Desktop/COMP4981/COMP4981Ass2/build/CMakeFiles/decode-checksum.dir
-/home/billy/Desktop/COMP4981/COMP4981Ass2/build/CMakeFiles/encode-parity.dir
-/home/billy/Desktop/COMP4981/COMP4981Ass2/build/CMakeFiles/edit_cache.dir

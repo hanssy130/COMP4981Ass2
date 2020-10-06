@@ -43,7 +43,10 @@ char* read_from_file(char* filename) {
         }
         str[i++] = c;
     }
-    fclose(fp);
+    if (fclose(fp) == -1) {
+        perror("fclose");
+        exit(EXIT_FAILURE);
+    }
     return str;
 }
 
@@ -183,25 +186,36 @@ void to_printable_binary(bool bits[8], char printable[9])
     return printable_bits;
 }
 
+
+/*char* display_32_bits(uint32_t val)
+{
+    bool bits[33];
+    char* printable_bits = malloc(10*sizeof(char));
+
+    for (uint32_t i = val << 32; i > 0; i = i/2) {
+        val &= i;
+    }
+    return printable_bits;
+}*/
+
  int test_case(char* result, char* answer) {
     if (strcmp(result, answer) == 0)
         return 1;
     return 0;
 }
 
-void crc32(char *message) {
-    char poly = "100110000010001110110110111";
-    char crc[strlen(poly)];
-    for (size_t i = 0; i < 32; i++)
-        strcat(message, "0"); // appending 32 '0' bits
-    message[strlen(message)]='\0';
-    printf("%s\n", message);
-    int i = 0;
-    while (message[i] != '\0') {
-        if (message[i] == '1')
-
-        i++;
+uint32_t encode_crc32(char* str) {
+    uint32_t crc = 0;
+    for (int j = 0; j < strlen(str); j++) {
+        crc  ^= (uint32_t)(str[j] << 24);
+        for (int i = 0; i < 8; i++) {
+            if ((crc & 0x80000000) != 0)
+                crc = (uint32_t) ((crc << 1) ^ CRC32_POLY);
+            else
+                crc <<= 1;
+        }
     }
+    return crc;
 }
 
 void decode(char* bits) {

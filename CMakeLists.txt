@@ -18,19 +18,20 @@ add_executable(decode-parity decode-parity.c)
 target_link_libraries(decode-parity bit)
 target_compile_options(decode-parity PRIVATE -Wpedantic -Wall -Wextra)
 
-# encode-checksum decode-checksum
+# encode-checksum
 add_executable(encode-checksum encode-checksum.c)
 target_link_libraries(encode-checksum bit)
 target_compile_options(encode-checksum PRIVATE -Wpedantic -Wall -Wextra)
 
+# decode-checksum
 add_executable(decode-checksum decode-checksum.c)
 target_link_libraries(decode-checksum bit)
 target_compile_options(decode-checksum PRIVATE -Wpedantic -Wall -Wextra)
 
 # encode-crc32 decode-crc32
-#add_executable(encode-crc32 encode-crc32.c)
-#target_link_libraries(encode-crc32 bit)
-#target_compile_options(encode-crc32 PRIVATE -Wpedantic -Wall -Wextra)
+add_executable(encode-crc32 encode-crc32.c)
+target_link_libraries(encode-crc32 bit)
+target_compile_options(encode-crc32 PRIVATE -Wpedantic -Wall -Wextra)
 
 #add_executable(decode-crc32 decode-crc32.c)
 #target_compile_options(decode-crc32 PRIVATE -Wpedantic -Wall -Wextra)

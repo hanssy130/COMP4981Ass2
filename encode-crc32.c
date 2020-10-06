@@ -2,31 +2,54 @@
 #include "bit_masking.h"
 
 int main(int argc, const char* argv[]) {
-    char *str = malloc(sizeof(char) * (strlen(argv[1])+1) );
-    char *message = malloc(sizeof(char) * (strlen(argv[1])+1) );
-
-    if (argc < 2)
-        perror("please specify <input>");
-    if (argv[1] == 0) { // read from stdin
+    char *str;
+    char *message;
+    if (argc < 2) {
         str = read_from_stdin();
-    } else if (strstr(argv[1], ".")) {
-        char* filename = malloc(sizeof(char) * (strlen(argv[1])+1) );
-        strcpy(filename, argv[1]);
-        str = read_from_file(filename);
-        free(filename);
-    } else { // read from command line
-        if (!str) {
-            perror("Failed malloc");
-            exit(EXIT_FAILURE);
+    } else {
+        if (strstr(argv[1], ".")) {
+            char *filename = malloc(sizeof(char) * (strlen(argv[1]) + 1));
+            strcpy(filename, argv[1]);
+            str = read_from_file(filename);
+            free(filename);
+        } else { // read from command line
+            str = malloc(sizeof(char) * (strlen(argv[1]) + 1));
+            if (!str) {
+                perror("Failed malloc");
+                exit(EXIT_FAILURE);
+            }
+            strcpy(str, argv[1]);
         }
-        strcpy(str, argv[1]);
     }
     /** PROGRAM */
+    message = malloc(sizeof(char) * strlen(argv[1]+1));
     for (size_t i = 0; i < strlen(str); i++) {
         message = strcat(message, display(str[i], 1, false));
+        char* tmp = realloc(message, sizeof(char)*(strlen(message)+LINESIZE));
+        if (tmp) {
+            message = tmp;
+        } else {
+            perror("realloc");
+            exit(EXIT_FAILURE);
+        }
     }
     printf("%s", message);
-    crc32(message);
+    uint32_t v = encode_crc32(str);
+
+    /** https://stackoverflow.com/questions/33577659/converting-decimal-to-32-bit-binary */
+   uint32_t mask = 1 << 31;
+    for (int i=0; i<8; i++) {
+        for (int j=0; j<4; j++) {
+            // check current bit, and print
+            char c = (v & mask) == 0 ? '0' : '1';
+            putchar(c);
+            // move down one bit
+            mask >>= 1;
+        }
+        // print a space very 4 bits
+    }
+    putchar('\n');
     free(str);
+    free(message);
     return 0;
 }

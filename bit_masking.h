@@ -11,6 +11,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define CRC32_POLY 0x04C11DB7
+
 #define MASK_00000001 0x01
 #define MASK_00000010 0x02
 #define MASK_00000100 0x04
@@ -41,7 +43,7 @@ void to_printable_binary(bool bits[8], char printable[10]);
 void checksum(char list[][NUM_BITS], char result[NUM_BITS], size_t len, bool odd);
 
 /** ENCODE-CRC32 */
-void crc32(char *message);
+uint32_t encode_crc32(char* str);
 
 /** TESTING */
 int test_case(char *result, char *answer);

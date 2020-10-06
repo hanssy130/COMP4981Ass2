@@ -4,6 +4,7 @@
 int main(int argc, const char* argv[]) {
     char *str;
     bool odd = get_opt(argv[1]);
+
     if (argc < 2) {
         perror("please specify --parity <input>");
         exit(EXIT_FAILURE);
@@ -18,9 +19,8 @@ int main(int argc, const char* argv[]) {
             str = read_from_file(filename);
             free(filename);
         } else { // read from command line
-            str = malloc(sizeof(char) * (strlen(argv[2]) + 1));
             if (!str) {
-                perror("Failed malloc");
+                perror("malloc");
                 exit(EXIT_FAILURE);
             }
             strcpy(str, argv[2]);
