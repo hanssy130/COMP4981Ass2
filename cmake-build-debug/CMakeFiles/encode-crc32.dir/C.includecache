@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/billy/Desktop/COMP4981/COMP4981Ass2/bit_masking.h
+stdio.h
+-
+stdint.h
+-
+stdbool.h
+-
+stdlib.h
+-
+string.h
+-
+
+/home/billy/Desktop/COMP4981/COMP4981Ass2/encode-crc32.c
+stdio.h
+-
+bit_masking.h
+/home/billy/Desktop/COMP4981/COMP4981Ass2/bit_masking.h
+

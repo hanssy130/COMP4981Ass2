@@ -34,7 +34,7 @@ int main(int argc, const char* argv[]) {
         strcpy(list[i], printable_bits);
         free(printable_bits);
     }
-    checksum(list, result, strlen(str), odd);
+    encode_checksum(list, result, strlen(str), odd);
     free(str);
     return 0;
 }

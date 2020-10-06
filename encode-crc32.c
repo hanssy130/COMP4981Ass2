@@ -3,26 +3,26 @@
 
 int main(int argc, const char* argv[]) {
     char *str;
-    char *message;
+    char *message = malloc(sizeof(char) * LINESIZE);
     if (argc < 2) {
         str = read_from_stdin();
-    } else {
+    } else if (argc >= 2) {
+        str = malloc(sizeof(char) * (strlen(argv[1]) + 1));
         if (strstr(argv[1], ".")) {
             char *filename = malloc(sizeof(char) * (strlen(argv[1]) + 1));
             strcpy(filename, argv[1]);
             str = read_from_file(filename);
             free(filename);
         } else { // read from command line
-            str = malloc(sizeof(char) * (strlen(argv[1]) + 1));
             if (!str) {
-                perror("Failed malloc");
+                perror("malloc");
                 exit(EXIT_FAILURE);
             }
             strcpy(str, argv[1]);
         }
     }
+
     /** PROGRAM */
-    message = malloc(sizeof(char) * strlen(argv[1]+1));
     for (size_t i = 0; i < strlen(str); i++) {
         message = strcat(message, display(str[i], 1, false));
         char* tmp = realloc(message, sizeof(char)*(strlen(message)+LINESIZE));
@@ -33,9 +33,10 @@ int main(int argc, const char* argv[]) {
             exit(EXIT_FAILURE);
         }
     }
-    printf("%s", message);
+    printf("%s", message); // prepending message
     uint32_t v = encode_crc32(str);
 
+    /** CONVERTING CRC TO BINARY */
     /** https://stackoverflow.com/questions/33577659/converting-decimal-to-32-bit-binary */
    uint32_t mask = 1 << 31;
     for (int i=0; i<8; i++) {

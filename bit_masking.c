@@ -146,7 +146,7 @@ void to_printable_binary(bool bits[8], char printable[9])
     printable[8] = '\0';
 }
 
- void checksum(char list[][NUM_BITS], char result[NUM_BITS], size_t len, bool odd) {
+ void encode_checksum(char list[][NUM_BITS], char result[NUM_BITS], size_t len, bool odd) {
     strcpy(result, list[0]);
     for (size_t j = 1; j < len; j++) {
         for (size_t z = 0; z < NUM_BITS - 1; z++) {
@@ -186,18 +186,6 @@ void to_printable_binary(bool bits[8], char printable[9])
     return printable_bits;
 }
 
-
-/*char* display_32_bits(uint32_t val)
-{
-    bool bits[33];
-    char* printable_bits = malloc(10*sizeof(char));
-
-    for (uint32_t i = val << 32; i > 0; i = i/2) {
-        val &= i;
-    }
-    return printable_bits;
-}*/
-
  int test_case(char* result, char* answer) {
     if (strcmp(result, answer) == 0)
         return 1;
@@ -206,9 +194,9 @@ void to_printable_binary(bool bits[8], char printable[9])
 
 uint32_t encode_crc32(char* str) {
     uint32_t crc = 0;
-    for (int j = 0; j < strlen(str); j++) {
+    for (size_t j = 0; j < strlen(str); j++) {
         crc  ^= (uint32_t)(str[j] << 24);
-        for (int i = 0; i < 8; i++) {
+        for (size_t i = 0; i < 8; i++) {
             if ((crc & 0x80000000) != 0)
                 crc = (uint32_t) ((crc << 1) ^ CRC32_POLY);
             else
@@ -216,31 +204,5 @@ uint32_t encode_crc32(char* str) {
         }
     }
     return crc;
-}
-
-void decode(char* bits) {
-    int counter = 0, total = 0;
-    for (size_t i = 0; i < strlen(bits); i++) {
-        if (i % 9 == 0) // new 8-bit string
-            counter = 0;
-        if (i % 7 != 0) {
-            int dec = 1;
-            if (bits[i] == '1')
-            {
-
-                for (int pow = 7 - counter; pow > 0; pow--) {
-                    dec *= 2;
-                }
-
-                total += dec;
-            }
-        }
-        counter++;
-        if (counter == 8) {
-            char c = (char) (total);
-            printf("%c", c);
-            total = 0;
-        }
-    }
 }
 
