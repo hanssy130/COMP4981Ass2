@@ -1,7 +1,17 @@
 #include <stdio.h>
 #include "bit_masking.h"
 
+/**
+ * Checking parity for decoding
+ * @param parity_message an Array of 8-bit binary with parity flag
+ * @param odd bool, true if odd, false otherwise
+ * @param index int the location of the parity
+ */
 void parity_check(char * parity_message, bool odd, int index);
+/**
+ * Converts bit to printable message
+ * @param parity_message an Array of 8-bit binary with parity flag
+ */
 void bit_to_char_printer(char * parity_message);
 
 void decode_parity(char * val, bool odd_parity) {
