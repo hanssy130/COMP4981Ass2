@@ -1,6 +1,6 @@
 # COMP4981Ass2
 
-This assignment is done by Billy Nguyen and Hans Sy.
+This assignment is done by Vu Phuong Quynh (Billy) Nguyen and Hans Sy.
 
 ## Specification
 
