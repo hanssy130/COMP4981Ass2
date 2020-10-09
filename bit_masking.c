@@ -61,7 +61,7 @@ int get_opt(const char argv[]) {
     }
 }
 
- void to_binary(int8_t val, bool bits[8]) {
+void to_binary(int8_t val, bool bits[8]) {
     bits[0] = get_bit_value(val, MASK_10000000);
     bits[1] = get_bit_value(val, MASK_01000000);
     bits[2] = get_bit_value(val, MASK_00100000);
@@ -72,7 +72,7 @@ int get_opt(const char argv[]) {
     bits[7] = get_bit_value(val, MASK_00000001);
 }
 
- bool get_bit_value(int8_t val, uint8_t mask)
+bool get_bit_value(int8_t val, uint8_t mask)
 {
     uint8_t masked;
     bool bit;
@@ -91,7 +91,7 @@ int get_opt(const char argv[]) {
     return bit;
 }
 
- void to_printable_binary_w_parity(bool bits[8], char printable[10], bool parity)
+void to_printable_binary_w_parity(bool bits[8], char printable[10], bool parity)
 {
     int counter = 0;
     for(size_t i = 0; i < 8; i++)
@@ -146,24 +146,19 @@ void to_printable_binary(bool bits[8], char printable[9])
     printable[8] = '\0';
 }
 
- void encode_checksum(char list[][NUM_BITS], char result[NUM_BITS-1], size_t len, bool odd) {
+void encode_checksum(char list[][NUM_BITS], char result[NUM_BITS], size_t len, bool odd) {
     strcpy(result, list[0]);
-    for (size_t j = 1; j < len; j++) {
-        for (size_t z = 0; z < NUM_BITS - 1; z++) {
+    for (size_t j = 0; j < NUM_BITS-1; j++) {
+        int counter = 0;
+        for (size_t z = 0; z < len; z++) {
             if (odd) {
-                if (result[z] == list[j][z]){
-                    result[z] = '1';
-                } else
-                {
-                    result[z] = '0';
-                }
+                if (list[z][j] == '1')
+                    counter++;
+                result[j] = (counter % 2 == 0) ? '1' : '0';
             } else {
-                if (result[z] == list[j][z]){
-                    result[z] = '0';
-                } else
-                {
-                    result[z] = '1';
-                }
+                if (list[z][j] == '1')
+                    counter++;
+                result[j] = (counter % 2 == 0) ? '0' : '1';
             }
         }
         result[9]='\0';
@@ -173,7 +168,7 @@ void to_printable_binary(bool bits[8], char printable[9])
     printf("%s\n", result);
 }
 
- char* display(int8_t val, bool parity, bool have_parity)
+char* display(int8_t val, bool parity, bool have_parity)
 {
     bool bits[8];
     char* printable_bits = malloc(10*sizeof(char));
@@ -186,7 +181,7 @@ void to_printable_binary(bool bits[8], char printable[9])
     return printable_bits;
 }
 
- int test_case(char* result, char* answer) {
+int test_case(char* result, char* answer) {
     if (strcmp(result, answer) == 0)
         return 1;
     return 0;
